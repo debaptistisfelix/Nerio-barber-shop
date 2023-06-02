@@ -1,0 +1,173 @@
+.signupForm {
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signupTitle {
+  font-family: var(--heading-font);
+  font-size: 40px;
+  color: var(--dark-grey);
+  margin-bottom: 0;
+}
+
+.signupIntro {
+  color: var(--light-grey);
+  font-family: var(--text-font);
+  margin: 0;
+}
+
+.errorParag {
+  color: brown;
+  text-align: center;
+  font-family: var(--text-font);
+  font-size: 14px;
+}
+
+.errorParagAnimation {
+  animation: bounce 01s ease-in-out 1;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+}
+
+.signupInputBox {
+  display: flex;
+  flex-direction: column;
+
+  height: fit-content;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 70%;
+  margin: 30px 0;
+  box-sizing: border-box;
+}
+.input {
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  color: var(--light-grey);
+}
+
+.passwordBox {
+  position: relative;
+  width: 100%;
+
+  height: fit-content;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--light-grey);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.eyeIcon:hover {
+  color: var(--dark-grey);
+}
+
+.input:focus {
+  border: 2px solid var(--light-grey);
+}
+
+.button {
+  font-family: var(--text-font);
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: var(--dark-grey);
+  color: var(--white-pure);
+  padding: 10px;
+  box-sizing: border-box;
+  width: 70%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  filter: brightness(130%);
+}
+
+.signupOutro {
+  color: var(--light-grey);
+  font-family: var(--text-font);
+  font-size: 14px;
+}
+
+.highlight {
+  cursor: pointer;
+}
+
+.highlight:hover {
+  filter: brightness(50%);
+}
+
+@media (max-width: 767px) {
+  .signupForm {
+    width: 100%;
+  }
+
+  .signupTitle {
+    font-size: clamp(40px, 13.58vw + 0.12rem, 60px);
+  }
+
+  .signUpIntro {
+    color: var(--light-grey);
+    text-align: center;
+    font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+    font-family: var(--text-font);
+  }
+
+  .errorParag {
+    color: brown;
+  }
+
+  .signupInputBox {
+    width: 90%;
+    height: fit-content;
+  }
+
+  .input {
+    height: clamp(40px, 13.58vw + 0.12rem, 60px);
+    font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+  }
+
+  .eyeIcon {
+    width: clamp(18px, 5.72vw + 0.12rem, 22px);
+    height: clamp(18px, 5.72vw + 0.12rem, 22px);
+  }
+  .button {
+    width: 90%;
+    font-size: clamp(18px, 5.72vw + 0.12rem, 22px);
+  }
+
+  .signupOutro {
+    font-size: clamp(14px, 4vw + 0.12rem, 16px);
+  }
+}

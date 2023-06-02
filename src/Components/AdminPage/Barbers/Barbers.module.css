@@ -1,0 +1,42 @@
+.barbersContainer {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--heading-font);
+  font-size: 30px;
+  color: var(--dark-yellow);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.intro {
+  color: var(--light-grey);
+  font-family: var(--text-font);
+  width: 90%;
+}
+
+.main {
+  display: flex;
+  width: 90%;
+  height: 75vh;
+}
+
+.infoDisplayer {
+  width: 70%;
+  border: 1px dotted #191919;
+  min-height: 100%;
+}
+
+.formAndList {
+  min-height: 100%;
+  width: 30%;
+  display: flex;
+  border: 1px dotted #191919;
+  flex-direction: column;
+}

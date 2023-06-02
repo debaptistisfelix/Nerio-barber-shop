@@ -1,0 +1,12 @@
+.Homepage {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #eeebe8;
+  align-items: center;
+  position: relative;
+}

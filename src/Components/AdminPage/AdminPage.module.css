@@ -1,0 +1,422 @@
+.AdminPage {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #eeebe8;
+  background-color: var(--dark-grey);
+
+  align-items: center;
+  position: relative;
+}
+
+.adminContainer {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  margin: 0;
+  border-bottom: 1px solid var(--light-grey);
+  position: relative;
+}
+
+.container {
+  display: none;
+}
+
+.sideNav {
+  border-right: 1px solid var(--light-grey);
+  width: 20%;
+  min-height: 100%;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.sideNavSmallContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  margin-top: 20px;
+}
+
+.dashboardTitle {
+  font-family: var(--heading-font);
+  text-align: center;
+  font-size: 30px;
+  width: 90%;
+  color: var(--white-pure);
+  color: var(--dark-yellow);
+  border: 1px solid var(--dark-yellow);
+  margin: 0;
+}
+
+.timeDisplayerContainer {
+  /*  border: 1px solid white; */
+  height: fit-content;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.sideLinks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  height: fit-content;
+
+  box-sizing: border-box;
+  padding: 20px 0;
+  gap: 10px;
+}
+
+.icon {
+  box-sizing: border-box;
+  margin-right: 10px;
+  color: var(--white-bg);
+}
+
+.sideLink {
+  margin: 0;
+  color: var(--light-grey);
+  font-family: var(--text-font);
+  cursor: pointer;
+  width: 70%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+
+.sideLink.active {
+  color: var(--white-pure);
+
+  background-color: var(--dark-yellow);
+}
+
+.logoutBtn {
+  font-family: var(--heading-font);
+  color: var(--dark-grey);
+  border: none;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 5px;
+  background-color: var(--dark-yellow);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+  width: 70%;
+  cursor: pointer;
+}
+
+.iconLogOut {
+  color: var(--dark-grey);
+  width: 20px;
+  height: 20px;
+}
+
+.dashboard {
+  min-width: 80%;
+  min-height: 100vh;
+  height: fit-content;
+  background-color: #eeebe8;
+}
+
+@media (max-width: 767px) {
+  .AdminPage {
+    width: 100%;
+    min-width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #eeebe8;
+    background-color: var(--dark-grey);
+
+    align-items: center;
+    position: relative;
+  }
+
+  .adminContainer {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    margin: 0;
+    border-bottom: 1px solid var(--light-grey);
+    position: relative;
+  }
+  .container {
+    position: absolute;
+    display: block;
+    top: 10px;
+    right: 10px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 120;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: var(--dark-grey);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .bar1.active {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+
+  /* Fade out the second bar */
+  .bar2.active {
+    opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .bar3.active {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+  .sideNav {
+    position: absolute;
+    background-color: var(--dark-grey);
+    width: 100%;
+    height: 100%;
+
+    z-index: 100;
+    left: -100%;
+  }
+
+  .sideNav.active {
+    animation: showSideNav 0.5s ease-out forwards;
+  }
+
+  .sideNav.notActive {
+    animation: hideSideNav 0.5s ease-out forwards;
+  }
+
+  @keyframes showSideNav {
+    from {
+      /*  transform: translateX(-100%); */
+      left: -100%;
+    }
+    to {
+      left: 0;
+    }
+  }
+
+  @keyframes hideSideNav {
+    from {
+      left: 0;
+    }
+    to {
+      left: -100%;
+    }
+  }
+
+  .sideNavSmallContainer {
+    height: 100%;
+  }
+
+  .logo {
+    width: clamp(150px, 52.86vw + 0.12rem, 200px);
+
+    margin-top: 20px;
+  }
+
+  .dashboardTitle {
+    font-family: var(--heading-font);
+    text-align: center;
+    font-size: clamp(30px, 10vw + 0.12rem, 50px);
+    width: 70%;
+    color: var(--white-pure);
+    color: var(--dark-yellow);
+    border: 1px solid var(--dark-yellow);
+    margin: 0;
+  }
+
+  .timeDisplayerContainer {
+    /*  border: 1px solid white; */
+    height: fit-content;
+    width: 100%;
+    margin: clamp(20px, 6.45vw + 0.12rem, 40px) 0;
+  }
+
+  .sideLinks {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: fit-content;
+
+    box-sizing: border-box;
+    padding: 20px 0;
+    gap: 10px;
+  }
+
+  .icon {
+    box-sizing: border-box;
+    margin-right: 10px;
+    color: var(--white-bg);
+    width: clamp(18px, 5.72vw + 0.12rem, 22px);
+    height: clamp(18px, 5.72vw + 0.12rem, 22px);
+  }
+
+  .sideLink {
+    margin: 0;
+    color: var(--light-grey);
+    font-family: var(--text-font);
+    cursor: pointer;
+    width: 70%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 200;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+  }
+
+  .sideLink.active {
+    color: var(--white-pure);
+
+    background-color: var(--dark-yellow);
+  }
+
+  .logoutBtn {
+    font-family: var(--heading-font);
+    color: var(--dark-grey);
+    border: none;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    background-color: var(--dark-yellow);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+    width: 70%;
+    cursor: pointer;
+  }
+
+  .iconLogOut {
+    color: var(--dark-grey);
+    width: clamp(18px, 5.72vw + 0.12rem, 22px);
+    height: clamp(18px, 5.72vw + 0.12rem, 22px);
+  }
+
+  .dashboard {
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .adminContainer {
+    height: fit-content;
+  }
+  .container {
+    position: absolute;
+    display: block;
+    top: 10px;
+    right: 10px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 120;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: var(--dark-grey);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .bar1.active {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+
+  /* Fade out the second bar */
+  .bar2.active {
+    opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .bar3.active {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+  .sideNav {
+    position: absolute;
+    background-color: var(--dark-grey);
+    width: 50%;
+    height: 100%;
+    z-index: 100;
+    left: -100%;
+  }
+
+  .sideNav.active {
+    animation: showSideNav 0.75s ease-out forwards;
+  }
+
+  .sideNav.notActive {
+    animation: hideSideNav 0.75s ease-out forwards;
+  }
+
+  @keyframes showSideNav {
+    from {
+      /*  transform: translateX(-100%); */
+      left: -100%;
+    }
+    to {
+      left: 0;
+    }
+  }
+
+  @keyframes hideSideNav {
+    from {
+      left: 0;
+    }
+    to {
+      left: -100%;
+    }
+  }
+
+  .sideNavSmallContainer {
+    height: 100%;
+  }
+
+  .dashboard {
+    z-index: 1;
+    width: 100%;
+    height: fit-content;
+  }
+}

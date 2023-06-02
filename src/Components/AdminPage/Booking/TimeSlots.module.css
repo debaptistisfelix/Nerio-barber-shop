@@ -1,0 +1,37 @@
+.timeSlots {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.label {
+  color: var(--light-grey);
+  font-family: var(--text-font);
+  /* border: 1px solid red; */
+}
+
+.timeSlotsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  justify-content: center;
+  height: fit-content;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .label {
+    font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+  }
+
+  .timeSlotsContainer {
+    width: 100%;
+    padding: 10px 0;
+  }
+}

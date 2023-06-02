@@ -1,0 +1,15 @@
+:root {
+  --light-orange: #ffa86b;
+  --light-grey: #828382;
+  --dark-grey: #191919;
+  --dark-yellow: #af7949;
+  --white-bg: #eeebe8;
+  --white-pure: #fff;
+  --star-yellow: #ffd500;
+  --heading-font: "Oswald", sans-serif;
+  --text-font: "Open Sans", sans-serif;
+  --btn-font: "Open Sans", sans-serif;
+  --motto-font: "Unbounded", cursive;
+  --label-font: "Instrument Serif", serif;
+  --price-font: "Berkshire Swash", cursive;
+}

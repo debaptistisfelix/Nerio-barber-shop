@@ -1,0 +1,15 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  background-color: red;
+  height: 35px;
+}
+
+.point {
+  background-color: white;
+  height: 25px;
+  width: 10px;
+  border-radius: 50%;
+}

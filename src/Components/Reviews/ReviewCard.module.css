@@ -1,0 +1,177 @@
+.card {
+  width: 300px;
+  min-width: 300px;
+  height: 350px;
+  min-height: fit-content;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--dark-grey);
+  box-sizing: border-box;
+  padding: 15px;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-out;
+  transform: rotateY(90deg);
+}
+
+.cardAppears {
+  animation: showCard 0.75s ease-out forwards;
+}
+
+@keyframes showCard {
+  from {
+    transform: rotateY(90deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.clientImg {
+  border-radius: 50%;
+  width: 50%;
+}
+
+.name {
+  color: var(--white-pure);
+  margin-top: 10px;
+  font-size: 25px;
+  font-family: var(--heading-font);
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.text {
+  color: var(--light-grey);
+  font-family: var(--text-font);
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+  margin: 0;
+}
+
+.starsBox {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 5px 0;
+}
+
+.star {
+  color: var(--star-yellow);
+  width: 25px;
+  height: 25px;
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 100%;
+    min-width: unset;
+    max-width: 400px;
+  }
+
+  .name {
+    font-size: clamp(25px, 8.22vw + 0.12rem, 35px);
+    text-align: center;
+  }
+
+  .text {
+    font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+  }
+
+  .star {
+    width: clamp(25px, 8.22vw + 0.12rem, 30px);
+    height: clamp(25px, 8.22vw + 0.12rem, 30px);
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .card {
+    min-width: 100px;
+    width: 250px;
+    height: 450px;
+    min-height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--dark-grey);
+    box-sizing: border-box;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-out;
+    transform: rotateY(90deg);
+  }
+
+  .cardAppears {
+    animation: showCard 0.75s ease-out forwards;
+  }
+
+  @keyframes showCard {
+    from {
+      transform: rotateY(90deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .clientImg {
+    border-radius: 50%;
+    width: 50%;
+  }
+
+  .name {
+    color: var(--white-pure);
+    margin-top: 10px;
+    font-size: 25px;
+    height: 20%;
+    padding: 0 10px;
+    font-family: var(--heading-font);
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .text {
+    color: var(--light-grey);
+    font-family: var(--text-font);
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+
+    margin: 0;
+  }
+
+  .starsBox {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 5px 0;
+  }
+
+  .star {
+    color: var(--star-yellow);
+    width: 25px;
+    height: 25px;
+  }
+}

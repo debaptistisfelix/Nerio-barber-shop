@@ -1,0 +1,67 @@
+.poleBox {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  width: 100px;
+  height: 125px;
+  top: 15%;
+}
+
+.poleCircle {
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.poleImg {
+  width: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  position: absolute;
+}
+
+.poleGlass {
+  width: 32px;
+  height: 66px;
+
+  top: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.poleLine {
+  width: 60px;
+  min-height: 10px;
+  background-color: white;
+  opacity: 1;
+  transform: rotate(-45deg);
+  animation: spiralUp 5s linear infinite;
+}
+
+@keyframes spiralUp {
+  from {
+    transform: translateY(-100px) rotate(-45deg);
+  }
+  to {
+    transform: translateY(0px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .poleCircle {
+    display: block;
+  }
+}

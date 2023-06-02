@@ -1,0 +1,336 @@
+.openingsContainer {
+  width: 40%;
+  height: fit-content;
+  border: 3px solid var(--dark-yellow);
+  background-color: var(--dark-grey);
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.openingBox {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.openingTitle {
+  font-family: var(--heading-font);
+  color: var(--dark-yellow);
+  margin: 0;
+  margin-bottom: 20px;
+  width: 80%;
+  letter-spacing: 2px;
+
+  text-align: center;
+  font-size: 30px;
+}
+
+.openingLine {
+  display: flex;
+  color: var(--light-grey);
+  font-family: var(--text-font);
+  width: 80%;
+  margin-bottom: 5px;
+  justify-content: space-between;
+}
+
+.day {
+  font-weight: 200;
+  margin: 0;
+}
+
+.hoursBox {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.morning,
+.afternoon {
+  font-weight: 200;
+  margin: 0;
+}
+
+.chiuso {
+  font-weight: 600;
+}
+
+.currentDay {
+  background-color: var(--dark-yellow);
+  color: var(--white-pure);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 85%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.currentDay .day {
+  font-weight: bold;
+}
+
+.currentDay .morning {
+  font-weight: bold;
+}
+
+.currentDay .afternoon {
+  font-weight: bold;
+}
+
+.circlesContainerTop {
+  width: 100%;
+  height: 30px;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  position: absolute;
+}
+.circlesContainerBottom {
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.circle {
+  background-color: var(--dark-yellow);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+@media (max-width: 767px) {
+  .openingsContainer {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    margin: 50px 0;
+    box-shadow: none;
+  }
+
+  .openingBox {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: clamp(20px, 6.45vw + 0.12rem, 30px) 0;
+    box-sizing: border-box;
+  }
+
+  .openingTitle {
+    font-family: var(--heading-font);
+    color: var(--dark-yellow);
+    margin: 0;
+    margin-bottom: clamp(20px, 6.45vw + 0.12rem, 30px);
+    width: 80%;
+    letter-spacing: 2px;
+
+    text-align: center;
+    font-size: clamp(25px, 8.22vw + 0.12rem, 30px);
+  }
+
+  .openingLine {
+    display: flex;
+    color: var(--light-grey);
+    font-family: var(--text-font);
+    width: 100%;
+    gap: clamp(5px, 1.1vw + 0.12rem, 10px);
+    margin-bottom: clamp(10px, 2.86vw + 0.12rem, 15px);
+
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .day {
+    font-weight: 200;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(18px, 5.72vw + 0.12rem, 20px);
+  }
+
+  .hoursBox {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 6.45vw + 0.12rem, 25px);
+    font-size: clamp(18px, 5.72vw + 0.12rem, 20px);
+  }
+
+  .morning,
+  .afternoon {
+    font-weight: 200;
+    margin: 0;
+  }
+
+  .chiuso {
+    font-weight: 600;
+  }
+
+  .currentDay {
+    background-color: var(--dark-yellow);
+    color: var(--white-pure);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  .currentDay .day {
+    font-weight: bold;
+  }
+
+  .currentDay .morning {
+    font-weight: bold;
+  }
+
+  .currentDay .afternoon {
+    font-weight: bold;
+  }
+
+  .circlesContainerTop {
+    width: 100%;
+    height: 30px;
+
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: clamp(10px, 2.86vw + 0.12rem, 20px);
+    box-sizing: border-box;
+    position: absolute;
+  }
+  .circlesContainerBottom {
+    width: 100%;
+    height: 30px;
+    bottom: 0;
+
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: clamp(10px, 2.86vw + 0.12rem, 20px);
+
+    box-sizing: border-box;
+    position: absolute;
+  }
+
+  .circle {
+    background-color: var(--dark-yellow);
+    width: clamp(10px, 2.86vw + 0.12rem, 20px);
+    height: clamp(10px, 2.86vw + 0.12rem, 20px);
+    border-radius: 50%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .openingsContainer {
+    width: 500px;
+    width: 80%;
+    height: 100%;
+    border: 1px solid var(--dark-yellow);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 50px 0;
+  }
+
+  .openingBox {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+
+  .openingTitle {
+    font-family: var(--heading-font);
+    color: var(--dark-yellow);
+    margin: 0;
+    margin-bottom: 20px;
+    width: 80%;
+    letter-spacing: 2px;
+
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .openingLine {
+    display: flex;
+    color: var(--light-grey);
+    font-family: var(--text-font);
+    width: 90%;
+    margin-bottom: 5px;
+    justify-content: space-between;
+  }
+
+  .day {
+    font-weight: 200;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .hoursBox {
+    display: flex;
+    width: 70%;
+
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .morning,
+  .afternoon {
+    font-weight: 200;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .chiuso {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .currentDay {
+    background-color: var(--dark-yellow);
+    color: var(--white-pure);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  .currentDay .day {
+    font-weight: bold;
+  }
+
+  .currentDay .morning {
+    font-weight: bold;
+  }
+
+  .currentDay .afternoon {
+    font-weight: bold;
+  }
+}

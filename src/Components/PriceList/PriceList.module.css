@@ -1,0 +1,334 @@
+.priceListContainer {
+  background-color: var(--white-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 600px;
+  margin: 50px 0;
+  box-sizing: border-box;
+}
+
+.priceList {
+  width: 1000px;
+  min-height: 600px;
+  height: 100%;
+  background-color: var(--dark-grey);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 7px solid var(--dark-yellow);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.border {
+  border: 2px solid var(--dark-yellow);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleBox {
+  width: 100%;
+
+  height: 50%;
+  min-height: fit-content;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.logo {
+  width: 150px;
+}
+
+.curvedTitle {
+  width: 200px;
+}
+
+.priceListContent {
+  display: flex;
+  width: 100%;
+  height: 80%;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.singlePrices {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.singlePricesTitle {
+  color: var(--dark-yellow);
+  border: 2px solid var(--dark-yellow);
+  width: fit-content;
+  border-left: none;
+  border-right: none;
+  font-weight: bold;
+  font-family: var(--heading-font);
+  padding: 0;
+}
+
+.actualList {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  width: 90%;
+
+  min-height: fit-content;
+}
+
+.priceLine {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px dotted var(--white-pure);
+}
+
+.label {
+  color: var(--white-pure);
+  font-weight: 100;
+
+  font-family: var(--label-font);
+  margin: 0;
+}
+
+.price {
+  color: var(--dark-yellow);
+  color: var(--dark-yellow);
+  margin: 0;
+  font-weight: bold;
+
+  font-family: var(--price-font);
+}
+
+@media (max-width: 767px) {
+  .priceListContainer {
+    height: fit-content;
+    margin: 50px 0;
+  }
+
+  .priceList {
+    width: min(95%, 500px);
+    height: fit-content;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: var(--dark-grey);
+  }
+
+  .border {
+    border: 2px solid var(--dark-yellow);
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    padding: 50px 0;
+    gap: 50px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titleBox {
+    width: 100%;
+
+    height: 50%;
+    padding: 0 clamp(20px, 6.45vw + 0.12rem, 30px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 2.86vw + 0.12rem, 20px);
+    position: relative;
+  }
+
+  .logo {
+    width: clamp(150px, 52.86vw + 0.12rem, 200px);
+  }
+
+  .curvedTitle {
+    width: clamp(200px, 70.72vw + 0.12rem, 250px);
+  }
+
+  .priceListContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+    height: 100%;
+  }
+
+  .singlePrices {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .singlePricesTitle {
+    color: var(--dark-yellow);
+    border: 2px solid var(--dark-yellow);
+    width: fit-content;
+    border-left: none;
+    border-right: none;
+    font-weight: bold;
+    padding: 0;
+    font-size: clamp(20px, 6.45vw + 0.12, 30px);
+  }
+
+  .actualList {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .priceLine {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px dotted var(--white-pure);
+  }
+
+  .label {
+    color: var(--white-pure);
+    font-weight: 100;
+    font-family: var(--label-font);
+    margin: 0;
+    font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+  }
+
+  .price {
+    color: var(--dark-yellow);
+    margin: 0;
+    font-weight: bold;
+    font-family: var(--price-font);
+    font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .priceListContainer {
+    background-color: var(--var(--white-pure)-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 550px;
+    margin: 50px 0;
+  }
+
+  .priceList {
+    width: min(85%, 800px);
+    height: 550px;
+    background-color: var(--dark-grey);
+    border-radius: 10px;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .border {
+    border: 2px solid var(--white-pure);
+    width: 95%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titleBox {
+    width: 100%;
+
+    height: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+  }
+
+  .priceListContent {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .singlePrices {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .singlePricesTitle {
+    color: var(--dark-yellow);
+    border: 2px solid var(--dark-yellow);
+    width: fit-content;
+    border-left: none;
+    border-right: none;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0;
+  }
+
+  .actualList {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .priceLine {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px dotted var(--white-pure);
+  }
+
+  .label {
+    color: var(--white-pure);
+    font-weight: 100;
+    font-family: var(--label-font);
+    margin: 0;
+  }
+
+  .price {
+    color: var(--dark-yellow);
+    margin: 0;
+    font-weight: bold;
+    font-family: var(--price-font);
+  }
+}
