@@ -22,7 +22,9 @@ export default function Barbers() {
     const fetchBarbers = async () => {
       setIsLoadingBarbers(true);
       try {
-        const response = await axios.get("http://localhost:8001/barbers");
+        const response = await axios.get(
+          "https://barber-server.cyclic.app/barbers"
+        );
 
         const filteredBarbers = response.data.data.barbers.filter((barber) => {
           return barber.name !== "Indifferente";
@@ -42,7 +44,7 @@ export default function Barbers() {
       const todayString = todayFirstString + "T00:00:00.000Z";
       try {
         const response = await axios.get(
-          `http://localhost:8001/appointment?date=${todayString}`
+          `https://barber-server.cyclic.app/appointment?date=${todayString}`
         );
         setBookings(response.data.data.appointments);
       } catch (error) {
@@ -58,7 +60,7 @@ export default function Barbers() {
   const removeBarber = async (barberId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8001/barbers/${barberId}`
+        `https://barber-server.cyclic.app/barbers/${barberId}`
       );
       const filteredBarbers = barbers.filter((barber) => {
         return barber._id !== barberId;
@@ -71,11 +73,14 @@ export default function Barbers() {
 
   const addBarber = async (barberName) => {
     try {
-      const response = await axios.post("http://localhost:8001/barbers", {
-        name: barberName,
-        img: "/anon.png",
-        value: barberName,
-      });
+      const response = await axios.post(
+        "https://barber-server.cyclic.app/barbers",
+        {
+          name: barberName,
+          img: "/anon.png",
+          value: barberName,
+        }
+      );
       const newBarber = response.data.data.barber;
       setBarbers([...barbers, newBarber]);
     } catch (error) {

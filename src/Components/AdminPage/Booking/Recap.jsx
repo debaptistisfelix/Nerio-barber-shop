@@ -38,15 +38,18 @@ export default function Recap() {
   const submitBookingRequest = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post("http://localhost:8001/appointment", {
-        name: name,
-        email: email,
-        date: moment(date).format("YYYY-MM-DD"),
-        duration: totalDuration,
-        services: services,
-        barber: chosenBarber,
-        time: moment(timeVariableToSendToDB).tz("Europe/Rome"),
-      });
+      const response = await axios.post(
+        "https://barber-server.cyclic.app/appointment",
+        {
+          name: name,
+          email: email,
+          date: moment(date).format("YYYY-MM-DD"),
+          duration: totalDuration,
+          services: services,
+          barber: chosenBarber,
+          time: moment(timeVariableToSendToDB).tz("Europe/Rome"),
+        }
+      );
       setIsLoading(false);
       handleBookingConfirmation(true);
       setError(null);

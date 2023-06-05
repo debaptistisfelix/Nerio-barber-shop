@@ -15,7 +15,9 @@ export default function ServicesSelector({ addServiceToServiceBooking }) {
     const getServices = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get("http://localhost:8001/services");
+        const response = await axios.get(
+          "https://barber-server.cyclic.app/services"
+        );
         setServicesList(response.data.data.services);
 
         setIsLoading(false);

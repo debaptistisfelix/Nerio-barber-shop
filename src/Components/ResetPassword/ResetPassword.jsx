@@ -46,7 +46,7 @@ export default function ResetPassword() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        `http://localhost:8001/admin/resetPassword/${id}`,
+        `https://barber-server.cyclic.app/admin/resetPassword/${id}`,
         {
           password: password,
           passwordConfirm: passwordConfirm,

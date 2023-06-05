@@ -57,7 +57,7 @@ export default function FormPartTwo({ bookingSectionRef }) {
       if (date !== null) {
         chooseTimeSlot(null);
         const response = await axios.get(
-          `http://localhost:8001/appointment/availability?barber=${chosenBarber?.value}&date=${formattedDateForServerRequest}&duration=${totalDuration}`
+          `https://barber-server.cyclic.app/appointment/availability?barber=${chosenBarber?.value}&date=${formattedDateForServerRequest}&duration=${totalDuration}`
         );
 
         if (!chosenBarber?.value.includes(",")) {

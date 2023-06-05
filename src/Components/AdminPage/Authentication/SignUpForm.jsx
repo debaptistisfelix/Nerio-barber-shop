@@ -38,12 +38,15 @@ export default function SignUpForm({ toggleForm, handleSetLoggedIn }) {
   const handleSubmitSignup = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8001/admin/signup", {
-        username: username,
-        email: email,
-        password: password,
-        passwordConfirm: passwordConfirm,
-      });
+      const response = await axios.post(
+        "https://barber-server.cyclic.app/admin/signup",
+        {
+          username: username,
+          email: email,
+          password: password,
+          passwordConfirm: passwordConfirm,
+        }
+      );
       const token = response.data.token;
       const expirationDate = new Date();
       expirationDate.setTime(expirationDate.getTime() + 24 * 60 * 60 * 1000);

@@ -35,7 +35,7 @@ export default function Agenda() {
       try {
         if (date !== null) {
           const response = await axios.get(
-            `http://localhost:8001/appointment?date=${formattedDateForServerRequest}`
+            `https://barber-server.cyclic.app/appointment?date=${formattedDateForServerRequest}`
           );
 
           const bookingsTosort = response.data.data.appointments.sort(
@@ -57,7 +57,7 @@ export default function Agenda() {
 
   const removeBooking = async (id) => {
     const response = await axios.delete(
-      `http://localhost:8001/appointment/${id}`
+      `https://barber-server.cyclic.app/appointment/${id}`
     );
     console.log(response.data);
     setBookings(bookings.filter((booking) => booking._id !== id));

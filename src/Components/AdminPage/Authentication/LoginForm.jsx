@@ -30,10 +30,13 @@ export default function LoginForm({ handleSetLoggedIn, toggleForm }) {
   const handleSubmitLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8001/admin/login", {
-        username: username,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://barber-server.cyclic.app/admin/login",
+        {
+          username: username,
+          password: password,
+        }
+      );
       const token = response.data.token;
       const expirationDate = new Date();
       expirationDate.setTime(expirationDate.getTime() + 24 * 60 * 60 * 1000);

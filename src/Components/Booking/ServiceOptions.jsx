@@ -23,11 +23,15 @@ export default function ServiceOptions({ bookingSectionRef }) {
 
   useEffect(() => {
     const getServices = async () => {
-      const response = await axios.get("http://localhost:8001/services");
+      const response = await axios.get(
+        "https://barber-server.cyclic.app/services"
+      );
       setServicesList(response.data.data.services);
     };
     const getBarbers = async () => {
-      const response = await axios.get("http://localhost:8001/barbers");
+      const response = await axios.get(
+        "https://barber-server.cyclic.app/barbers"
+      );
       setAvailableBarbers(response.data.data.barbers);
     };
     getServices();

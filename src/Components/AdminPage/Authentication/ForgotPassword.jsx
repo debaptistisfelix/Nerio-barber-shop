@@ -25,7 +25,7 @@ export default function ForgotPassword({ toggleForm }) {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:8001/admin/forgotPassword",
+        "https://barber-server.cyclic.app/admin/forgotPassword",
         {
           email: email,
         }

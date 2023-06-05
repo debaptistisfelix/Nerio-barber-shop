@@ -25,7 +25,7 @@ export default function CancelBooking() {
     setIsLoading(true);
     try {
       const response = await axios.delete(
-        `http://localhost:8001/appointment/${id}`
+        `https://barber-server.cyclic.app/appointment/${id}`
       );
       console.log(response);
       setIsLoading(false);

@@ -13,7 +13,9 @@ export default function Services() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get("http://localhost:8001/services");
+        const response = await axios.get(
+          "https://barber-server.cyclic.app/services"
+        );
         setServices(response.data.data.services);
       } catch (error) {
         console.log(error);
@@ -26,7 +28,7 @@ export default function Services() {
   const removeService = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8001/services/${id}`
+        `https://barber-server.cyclic.app/services/${id}`
       );
       const filteredServices = services.filter((service) => {
         return service._id !== id;
@@ -40,7 +42,7 @@ export default function Services() {
   const updateService = async (id, service) => {
     try {
       const response = await axios.patch(
-        `http://localhost:8001/services/${id}`,
+        `https://barber-server.cyclic.app/services/${id}`,
         {
           service: service.service,
           duration: service.duration,
@@ -60,12 +62,15 @@ export default function Services() {
 
   const addService = async (service) => {
     try {
-      const response = await axios.post("http://localhost:8001/services", {
-        service: service.service,
-        duration: service.duration,
-        price: service.price,
-        category: service.category,
-      });
+      const response = await axios.post(
+        "https://barber-server.cyclic.app/services",
+        {
+          service: service.service,
+          duration: service.duration,
+          price: service.price,
+          category: service.category,
+        }
+      );
       setServices([...services, response.data.data.service]);
       setAddedSuccesfully(true);
       setTimeout(() => {

@@ -9,7 +9,9 @@ export default function BarberSelector({ chooseBarber }) {
   useEffect(() => {
     const fetchBarbers = async () => {
       try {
-        const response = await axios.get("http://localhost:8001/barbers");
+        const response = await axios.get(
+          "https://barber-server.cyclic.app/barbers"
+        );
         setBarbers(response.data.data.barbers);
         console.log(response);
         setError(null);

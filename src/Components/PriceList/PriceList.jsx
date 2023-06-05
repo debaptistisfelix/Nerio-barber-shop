@@ -15,7 +15,9 @@ export default function PriceList() {
     setIsLoading(true);
     const getPriceList = async () => {
       try {
-        const response = await axios.get("http://localhost:8001/services");
+        const response = await axios.get(
+          "https://barber-server.cyclic.app/services"
+        );
 
         const allServices = response.data.data.services;
         const hairServices = allServices.filter((service) => {

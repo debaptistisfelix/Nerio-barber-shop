@@ -57,15 +57,18 @@ export default function FormPartThree({ bookingSectionRef }) {
     setIsLoading(true);
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8001/appointment", {
-        name: name,
-        email: email,
-        date: moment(date).format("YYYY-MM-DD"),
-        duration: totalDuration,
-        services: services,
-        barber: temporaryBarber,
-        time: timeVariableToSendToDB,
-      });
+      const response = await axios.post(
+        "https://barber-server.cyclic.app/appointment",
+        {
+          name: name,
+          email: email,
+          date: moment(date).format("YYYY-MM-DD"),
+          duration: totalDuration,
+          services: services,
+          barber: temporaryBarber,
+          time: timeVariableToSendToDB,
+        }
+      );
       setError(null);
       setIsLoading(false);
       setIsBookingConfirmed(true);

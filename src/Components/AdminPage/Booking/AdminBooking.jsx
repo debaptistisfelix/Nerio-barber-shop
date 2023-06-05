@@ -43,7 +43,7 @@ export default function AdminBooking() {
       if (date !== null && chosenBarber !== null && services.length !== 0) {
         setTime(null);
         const response = await axios.get(
-          `http://localhost:8001/appointment/availability?barber=${chosenBarber}&date=${formattedDateForServerRequest}&duration=${totalDuration}`
+          `https://barber-server.cyclic.app/appointment/availability?barber=${chosenBarber}&date=${formattedDateForServerRequest}&duration=${totalDuration}`
         );
 
         if (!chosenBarber.includes(",")) {
