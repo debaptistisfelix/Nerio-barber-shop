@@ -19,6 +19,10 @@
   margin: 0;
 }
 
+.screenShader {
+  display: none;
+}
+
 .logo {
   height: 100%;
   width: fit-content;
@@ -120,6 +124,17 @@
     padding: 5% 5%;
   }
 
+  .screenShader {
+    min-width: 100vw;
+    display: block;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+
   .logoImg {
     width: 90px;
     padding-top: 10px;
@@ -131,6 +146,7 @@
     width: fit-content;
     height: fit-content;
     color: var(--white-pure);
+    z-index: 11;
   }
 
   .homeBtn {
@@ -138,6 +154,7 @@
     width: 35px;
     height: 35px;
     transition: all 0.2s ease-out;
+    z-index: 11;
   }
 
   .navLinkContainer {
@@ -145,9 +162,11 @@
     flex-direction: column;
     align-items: flex-start;
     display: none;
-    width: 95%;
+    align-items: center;
+    width: 90%;
+    z-index: 11;
     height: fit-content;
-    top: 100%;
+    top: 90%;
     margin: 0;
     padding: 0;
     left: 50%;
@@ -168,7 +187,7 @@
   .listElement {
     color: var(--light-grey);
 
-    width: 100%;
+    width: 90%;
     border-bottom: 1px solid var(--light-grey);
     padding: clamp(10px, 2.86vw + 0.12rem, 15px);
   }
@@ -190,6 +209,7 @@
 
   .hamburgerIcon {
     display: block;
+    z-index: 11;
   }
 
   .bar {

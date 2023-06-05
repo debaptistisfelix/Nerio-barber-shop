@@ -15,23 +15,6 @@
   opacity: 1;
 }
 
-.serviceAnimation {
-  animation: bounce 0.5s ease-in-out;
-}
-
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 .service {
   height: 100%;
   width: 60%;
@@ -93,10 +76,10 @@
     flex-wrap: wrap;
     height: fit-content;
     box-sizing: border-box;
-    padding: 5px 10px;
+    padding: 0px 10px;
 
     transition: all 0.3s ease-in-out;
-    margin: 10px 0;
+    margin: 0;
     justify-content: space-between;
     cursor: pointer;
   }
@@ -105,12 +88,8 @@
     opacity: unset;
   }
 
-  .serviceLine:hover {
-    transform: scale(1.1);
-  }
-
-  .serviceAnimation {
-    animation: bounce 0.5s ease-in-out;
+  .serviceLine.active {
+    border: 1px solid red;
   }
 
   @keyframes bounce {

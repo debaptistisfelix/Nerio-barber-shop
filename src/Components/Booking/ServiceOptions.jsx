@@ -142,7 +142,13 @@ export default function ServiceOptions({ bookingSectionRef }) {
                   return service.category === "capelli";
                 })
                 .map((service) => {
-                  return <ServiceBox service={service} key={uuidv4()} />;
+                  return (
+                    <ServiceBox
+                      chosenServices={services}
+                      service={service}
+                      key={uuidv4()}
+                    />
+                  );
                 })}
           </div>
         )}

@@ -67,6 +67,7 @@ export default function Navbar() {
         <div className={` ${styles.bar} ${isNavOpen && styles.bar2}`}></div>
         <div className={` ${styles.bar} ${isNavOpen && styles.bar3}`}></div>
       </div>
+      {isNavOpen === true && <div className={styles.screenShader}></div>}
     </nav>
   );
 }

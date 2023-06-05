@@ -4,6 +4,8 @@
   background-color: var(--light-orange);
   height: 760px;
   position: relative;
+  margin-top: 50px;
+  box-sizing: border-box;
 }
 
 .customShapeDividerTop {

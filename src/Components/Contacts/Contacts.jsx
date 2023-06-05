@@ -44,7 +44,7 @@ export default function Contacts() {
           <p className={styles.text}>via Chat</p>
           <a
             className={styles.link}
-            href="https://api.whatsapp.com/send?phone=3661168898"
+            href="https://api.whatsapp.com/send?phone=3298911991"
             target="_blank"
           >
             CHATTA CON NOI
