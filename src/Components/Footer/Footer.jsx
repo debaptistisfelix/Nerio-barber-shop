@@ -9,7 +9,7 @@ import "../CSS/variables.css";
 
 export default function Footer() {
   return (
-    <section className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={styles.infos}>
         <div className={styles.infosBox}>
           <h3 className={styles.infosTitle}>CONTATTI</h3>
@@ -46,6 +46,6 @@ export default function Footer() {
           <FontAwesomeIcon icon={faTiktok} className={styles.icon} />
         </div>
       </div>
-    </section>
+    </footer>
   );
 }

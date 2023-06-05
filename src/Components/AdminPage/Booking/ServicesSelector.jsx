@@ -17,7 +17,7 @@ export default function ServicesSelector({ addServiceToServiceBooking }) {
       try {
         const response = await axios.get("http://localhost:8001/services");
         setServicesList(response.data.data.services);
-        console.log(response.data.data.services);
+
         setIsLoading(false);
       } catch (error) {
         console.log(error);

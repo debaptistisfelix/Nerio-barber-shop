@@ -54,8 +54,6 @@ export default function AdminBooking() {
               a.slot > b.slot ? 1 : -1
             );
 
-          console.log("All Available time slots:", availableTimeSlots);
-
           // Calculate the number of slots for each barber
           const barberSlotsCount = availableTimeSlots.reduce((count, slot) => {
             if (!count[slot.barber]) {
@@ -64,8 +62,6 @@ export default function AdminBooking() {
             count[slot.barber]++;
             return count;
           }, {});
-
-          console.log("Barber slots count:", barberSlotsCount);
 
           // Find the barber with more slots by comparing their occurrences in the array of available time slots
           const barberWithMoreSlots = Object.keys(barberSlotsCount).reduce(
@@ -103,14 +99,6 @@ export default function AdminBooking() {
               }
             }
           }
-
-          console.log("slot Occurrences:", slotOccurrences);
-
-          console.log(
-            "Barber with most free slots:",
-            barberWithMoreSlots.trim()
-          );
-          console.log("Filtered slots:", filteredSlots);
 
           /* chooseBarber(barberWithMoreSlots.trim()); */
           setAvailableSlots(filteredSlots);

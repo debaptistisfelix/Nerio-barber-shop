@@ -24,8 +24,6 @@ export default function ServiceBox({ service }) {
     addServiceToServiceList(service);
   };
 
-  console.log(services);
-
   return (
     <div
       ref={serviceLineRef}

@@ -10,6 +10,7 @@ import BookingBlock from "./BookingBlock";
 export default function Agenda() {
   const [date, setDate] = useState(null);
   const [bookings, setBookings] = useState([]);
+  const [error, setError] = useState(null);
 
   let formattedDate;
   if (date === null) {
@@ -31,12 +32,24 @@ export default function Agenda() {
 
   useEffect(() => {
     const getBookingsOfTheDay = async () => {
-      if (date !== null) {
-        const response = await axios.get(
-          `http://localhost:8001/appointment?date=${formattedDateForServerRequest}`
-        );
-        console.log(response.data.data.appointments);
-        setBookings(response.data.data.appointments);
+      try {
+        if (date !== null) {
+          const response = await axios.get(
+            `http://localhost:8001/appointment?date=${formattedDateForServerRequest}`
+          );
+
+          const bookingsTosort = response.data.data.appointments.sort(
+            (a, b) => {
+              const timeA = new Date(a.time).getTime();
+              const timeB = new Date(b.time).getTime();
+              return timeA - timeB;
+            }
+          );
+          setBookings(bookingsTosort);
+        }
+      } catch (error) {
+        console.log(error);
+        setError("Errore nel caricamento degli appuntamenti");
       }
     };
     getBookingsOfTheDay();

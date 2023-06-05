@@ -9,6 +9,7 @@ import moment from "moment";
 import Loader from "../Loader/Loader";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 import timeConverter from "../HelperFunctions/timeConverter";
 
 export default function FormPartThree({ bookingSectionRef }) {
@@ -29,6 +30,11 @@ export default function FormPartThree({ bookingSectionRef }) {
   } = useContext(BookingContext);
 
   const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
+
+  const handleAccepTerms = () => {
+    setAcceptedTerms(!acceptedTerms);
+  };
 
   const timeVariableToSendToDB = `${moment(date).format(
     "YYYY-MM-DD"
@@ -40,10 +46,6 @@ export default function FormPartThree({ bookingSectionRef }) {
       hour: time.split(":")[0],
       minute: time.split(":")[1],
     });
-
-  console.log("date:", date);
-  console.log("timeVariableToSendToDB", timeVariableToSendToDB);
-  console.log("italianTimeVariable", italianTimeVariable._d);
 
   const localTime = timeConverter(date, time);
 
@@ -173,7 +175,24 @@ export default function FormPartThree({ bookingSectionRef }) {
               nostra Agenda riceverai una mail di conferma.
             </p>
 
+            <section className={styles.TermsBox}>
+              <input
+                onChange={handleAccepTerms}
+                id="check"
+                type="checkbox"
+                value={acceptedTerms}
+                className={styles.checkbox}
+              />
+              <label htmlFor="check" className={styles.terms}>
+                Accetto{" "}
+                <Link className={styles.termsLink} target="_blank" to="/terms">
+                  Termini e Condizioni d'uso
+                </Link>
+              </label>
+            </section>
+
             <button
+              disabled={!acceptedTerms}
               onClick={() => {
                 submitBookingRequest();
               }}

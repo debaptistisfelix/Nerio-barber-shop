@@ -59,18 +59,14 @@ export default function FormPartTwo({ bookingSectionRef }) {
         const response = await axios.get(
           `http://localhost:8001/appointment/availability?barber=${chosenBarber?.value}&date=${formattedDateForServerRequest}&duration=${totalDuration}`
         );
-        console.log(chosenBarber?.value);
-        console.log(chosenBarber);
+
         if (!chosenBarber?.value.includes(",")) {
           setAvailableSlots(response.data.data.availableSlotsDetailed);
-          console.log(response.data.data.availableSlotsDetailed);
         } else if (chosenBarber?.value.includes(",")) {
           const availableTimeSlots =
             response.data.data.availableSlotsDetailed.sort((a, b) =>
               a.slot > b.slot ? 1 : -1
             );
-
-          console.log("All Available time slots:", availableTimeSlots);
 
           // Calculate the number of slots for each barber
           const barberSlotsCount = availableTimeSlots.reduce((count, slot) => {
@@ -80,8 +76,6 @@ export default function FormPartTwo({ bookingSectionRef }) {
             count[slot.barber]++;
             return count;
           }, {});
-
-          console.log("Barber slots count:", barberSlotsCount);
 
           // Find the barber with more slots by comparing their occurrences in the array of available time slots
           const barberWithMoreSlots = Object.keys(barberSlotsCount).reduce(
@@ -120,13 +114,6 @@ export default function FormPartTwo({ bookingSectionRef }) {
             }
           }
 
-          console.log("slot Occurrences:", slotOccurrences);
-
-          console.log(
-            "Barber with most free slots:",
-            barberWithMoreSlots.trim()
-          );
-          console.log("Filtered slots:", filteredSlots);
           setAvailableSlots(filteredSlots);
         }
       }

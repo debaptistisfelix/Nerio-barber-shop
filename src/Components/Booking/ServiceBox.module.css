@@ -91,7 +91,6 @@
     display: flex;
     width: 90%;
     flex-wrap: wrap;
-    /* border: 1px solid red; */
     height: fit-content;
     box-sizing: border-box;
     padding: 5px 10px;
@@ -104,6 +103,10 @@
 
   .serviceLine:hover > .service > .plusIcon {
     opacity: unset;
+  }
+
+  .serviceLine:hover {
+    transform: scale(1.1);
   }
 
   .serviceAnimation {

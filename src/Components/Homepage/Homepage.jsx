@@ -30,12 +30,13 @@ export default function Homepage() {
     <section className={styles.Homepage}>
       <Navbar />
       <Banner />
+      <AboutUs />
       <Contacts />
       <PriceList />
       <BookingContextProvider>
         <BookingSection />
       </BookingContextProvider>
-      <AboutUs />
+
       {isMobile ? <MobileReviews /> : <Reviews />}
       <Footer />
     </section>

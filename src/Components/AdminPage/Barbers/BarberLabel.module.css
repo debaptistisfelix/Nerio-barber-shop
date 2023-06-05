@@ -1,0 +1,177 @@
+.listItem {
+  font-family: var(--heading-font);
+  font-size: 20px;
+  color: var(--white-pure);
+  background-color: var(--dark-grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 170px;
+  gap: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.listItem:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.listItemToDelete {
+  animation: growWidth 0.5s ease-out forwards;
+  background-color: brown;
+}
+
+.shrinkListItem {
+  animation: shrinkWidth 0.5s ease-out forwards;
+}
+
+@keyframes growWidth {
+  from {
+    width: 170px;
+  }
+  to {
+    width: 200px;
+  }
+}
+
+@keyframes shrinkWidth {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 170px;
+  }
+}
+
+.singleInteractions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interactions {
+  width: 50px;
+
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.xIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--white-pure);
+  filter: brightness(50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.xIcon:hover {
+  cursor: pointer;
+  filter: brightness(100%);
+}
+
+.checkIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--white-pure);
+  filter: brightness(50%);
+  transition: all 0.2s ease-in-out;
+}
+.checkIcon:hover {
+  cursor: pointer;
+  filter: brightness(100%);
+}
+
+@media (max-width: 767px) {
+  .listItem {
+    font-family: var(--heading-font);
+    font-size: clamp(20px, 6.45vw + 0.12rem, 25px);
+    color: var(--white-pure);
+    background-color: var(--dark-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 200px;
+    gap: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .listItem:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  .listItemToDelete {
+    animation: growWidth 0.5s ease-out forwards;
+    background-color: brown;
+  }
+
+  .shrinkListItem {
+    animation: shrinkWidth 0.5s ease-out forwards;
+  }
+
+  @keyframes growWidth {
+    from {
+      width: 200px;
+    }
+    to {
+      width: 90%;
+    }
+  }
+
+  @keyframes shrinkWidth {
+    from {
+      width: 90%;
+    }
+    to {
+      width: 200px;
+    }
+  }
+
+  .singleInteractions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .interactions {
+    width: 50px;
+
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .xIcon {
+    width: 16px;
+    height: 16px;
+    color: var(--white-pure);
+    filter: brightness(50%);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .xIcon:hover {
+    cursor: pointer;
+    filter: brightness(100%);
+  }
+
+  .checkIcon {
+    width: 16px;
+    height: 16px;
+    color: var(--white-pure);
+    filter: brightness(50%);
+    transition: all 0.2s ease-in-out;
+  }
+  .checkIcon:hover {
+    cursor: pointer;
+    filter: brightness(100%);
+  }
+}

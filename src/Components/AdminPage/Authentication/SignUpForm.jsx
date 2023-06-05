@@ -114,7 +114,7 @@ export default function SignUpForm({ toggleForm, handleSetLoggedIn }) {
           <input
             value={passwordConfirm}
             onChange={handlePasswordConfirmChange}
-            type={showPassword ? "text" : "password"}
+            type={showPasswordConfirm ? "text" : "password"}
             placeholder="Conferma Password"
             className={styles.input}
             required

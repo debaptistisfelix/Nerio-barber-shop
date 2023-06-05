@@ -16,7 +16,7 @@ export default function PriceList() {
     const getPriceList = async () => {
       try {
         const response = await axios.get("http://localhost:8001/services");
-        console.log(response.data.data.services);
+
         const allServices = response.data.data.services;
         const hairServices = allServices.filter((service) => {
           return service.category === "capelli";
@@ -41,8 +41,6 @@ export default function PriceList() {
 
     getPriceList();
   }, []);
-
-  console.log(hairList, beardList, treatmentList);
 
   return (
     <section className={styles.priceListContainer} id="priceList">
