@@ -3,17 +3,19 @@
 import styles from "./Dashboard.module.css"
 import Navbar from "../OldNavbar/Navbar"
 import Hamburger from "../OldNavbar/Hamburger"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Agenda from "./Agenda/Agenda"
 import Services from "./Services/Services"
 import Barbers from "./Barbers/Barbers"
 import AdminBooking from "./Booking/AdminBooking"
 import { useAdminBookingContext } from "../../Context/AdminBookingContext"
+import { useTouchContext } from "../../Context/TouchContext"
 
 export default function Dashboard() {
   const [activeSidebar, setActiveSidebar] = useState(null)
   const [displayedPage, setDisplayedPage] = useState(1)
   const {resetAll} = useAdminBookingContext()
+  const {windowWidth, handleResize} = useTouchContext()
 
   const toggleSidebar = () => {
       setActiveSidebar(!activeSidebar)
@@ -23,6 +25,25 @@ export default function Dashboard() {
     resetAll();
     setDisplayedPage(page)
 }
+
+
+
+useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+},[])
+
+useEffect(() => {
+
+
+    if(windowWidth > 600){
+       setActiveSidebar(false)
+    }
+},[
+    windowWidth
+])
 
 
 

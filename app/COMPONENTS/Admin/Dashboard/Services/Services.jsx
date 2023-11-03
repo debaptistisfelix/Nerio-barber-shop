@@ -83,7 +83,7 @@ export default function Services() {
       );
       const data = await response.json();
       const updatedService = data;
-      console.log(updatedService);
+
       const servicesFilteredFromOldService = services.filter((service) => {
         return service.id !== id;
       });
@@ -117,8 +117,7 @@ export default function Services() {
         }
       );
       const data = await response.json();
-      console.log("response", response)
-      console.log("data", data)
+
       setServices([...services, data]);
       setServiceAddingLoading(false);
 

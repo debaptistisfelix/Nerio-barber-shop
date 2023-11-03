@@ -31,9 +31,9 @@ export default function LoginForm({logUserIn}) {
             ...data,
             redirect: false,
         }).then((callback)=>{
-            console.log(callback)
+   
             if(callback.error){
-                console.log(callback.error)
+
                 notify("Credenziali non corrette", 'error')
                 setloading(false)
             } 

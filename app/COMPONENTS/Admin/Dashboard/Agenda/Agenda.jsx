@@ -76,7 +76,6 @@ export default function Agenda() {
         method: "DELETE"
       }
     );
-    console.log(response.data);
     setBookings(bookings.filter((booking) => booking.id !== id));
     setIsFullscreenLoading(false);
     notify("Appuntamento cancellato con successo", "success");
@@ -93,7 +92,6 @@ export default function Agenda() {
       <h1 className={styles.agendaTitle}>I TUOI APPUNTAMENTI</h1>
       <main className={styles.agendaContainer}>
         <div className={styles.dateSelector}>
-          {/* <p className={styles.agendaParag}>Seleziona una data.</p> */}
           {formattedDate === "Nessuna data selezionata" && (
             <p className={styles.agendaParag}>Nessuna data selezionata</p>
           )}

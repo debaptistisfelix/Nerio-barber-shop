@@ -12,6 +12,8 @@ import TimeDisplayer from './TimeDisplayer';
 import { signOut } from 'next-auth/react';
 
 
+
+
 export default function Navbar({activeSidebar, toggleSidebar, changeDisplayedPage, displayedPage}){
 
 
@@ -20,6 +22,8 @@ const handleLinkClick = (nr) => {
     changeDisplayedPage(nr);
     toggleSidebar();
 };
+
+
 
 
     return (

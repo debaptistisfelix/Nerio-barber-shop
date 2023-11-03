@@ -32,7 +32,7 @@
   }
   
   .customShapeDividerTop .shapeFill {
-    fill: var(--white-pure);
+    fill: var(--white-bg);
   }
   
   .reviews {

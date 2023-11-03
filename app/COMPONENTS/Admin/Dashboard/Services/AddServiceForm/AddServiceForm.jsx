@@ -24,7 +24,7 @@ export default function AddServiceForm({ addService }) {
     setServicePrice("");
     setServiceDuration("");
     setSelectedCategory("nocateg");
-    console.log("resetted inputs");
+
   };
 
   return (

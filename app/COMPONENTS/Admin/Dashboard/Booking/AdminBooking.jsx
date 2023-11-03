@@ -41,7 +41,6 @@ export default function AdminBooking() {
           method: "DELETE"
         })
         const data = await response.json();
-        console.log(data)
       }catch(error){
         console.log(error)
       }
@@ -72,7 +71,7 @@ export default function AdminBooking() {
       const DateUTC = ConvertToDateUTC(date);
       const fetchedSlots = await fetchAvailableSlots(booking?.barber.id, DateUTC, bookingTotals.totalDuration);
 
-      console.log("fetchedSlots: ", fetchedSlots)
+
 
       if (booking?.barber.name !== "Any Barber") {
         setAvailableSlots(fetchedSlots);
@@ -93,7 +92,7 @@ export default function AdminBooking() {
           return count;
         }, {});
 
-        console.log("barberSlotsCount: ", barberSlotsCount)
+
 
         // Find the barber with more slots by comparing their occurrences in the array of available time slots
         const barberWithMoreSlots = Object.keys(barberSlotsCount).reduce(
@@ -103,7 +102,7 @@ export default function AdminBooking() {
               : barberB
         );
 
-        console.log("barberWithMoreSlots",barberWithMoreSlots)
+    
 
         // Filter slots and remove duplicates for the barber with less slots
         const filteredSlots = [];
@@ -145,7 +144,7 @@ export default function AdminBooking() {
     getAvailableSlots();
   }, [date]);
 
-  console.log("booking: ", booking)
+
 
 
 

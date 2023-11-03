@@ -68,16 +68,12 @@ export default function FormPartTwo({ bookingSectionRef }) {
 
 
  
-console.log("booking", booking)
-console.log("bookingTotals", bookingTotals)
-  console.log("availableSlots", availableSlots)
-  console.log("time: ", time)
-  console.log("date: ", date)
+
 
   const getAvailableSlots = useCallback(async () => {
     if (date !== null) {
       const DateUTC = ConvertToDateUTC(date);
-      console.log("DateUTC: ", DateUTC)
+    
      setIsSlotLoading(true);
       const fetchedSlots = await fetchAvailableSlots(booking?.barber.id, DateUTC, bookingTotals?.totalDuration);
 
@@ -105,7 +101,7 @@ console.log("bookingTotals", bookingTotals)
           return count;
         }, {});
 
-        console.log("barberSlotsCount: ", barberSlotsCount)
+      
 
         // Find the barber with more slots by comparing their occurrences in the array of available time slots
         const barberWithMoreSlots = Object.keys(barberSlotsCount).reduce(
@@ -115,7 +111,7 @@ console.log("bookingTotals", bookingTotals)
               : barberB
         );
 
-        console.log("barberWithMoreSlots",barberWithMoreSlots)
+    
 
         // Filter slots and remove duplicates for the barber with less slots
         const filteredSlots = [];
@@ -186,7 +182,7 @@ console.log("bookingTotals", bookingTotals)
    
   }
   
-console.log(windowWidth)
+
   return (
     <section className={styles.container}>
       <p className={styles.intro}>

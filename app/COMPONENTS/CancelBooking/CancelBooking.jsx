@@ -51,7 +51,7 @@ export default function CancelBooking() {
         }
         };
 
-    console.log(BookingAlreadyDeleted)
+
 
   const handleCancellationRequest = async () => {
     setIsLoading(true);
@@ -64,7 +64,6 @@ export default function CancelBooking() {
             },
         }
       );
-      console.log(response);
       setIsLoading(false);
       setCancellationConfirmed(true);
     } catch (error) {

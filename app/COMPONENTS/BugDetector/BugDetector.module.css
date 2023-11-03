@@ -1,0 +1,336 @@
+.bugDetectorContainer{
+    width: 50px;
+    height: 50px;
+     position: fixed;
+     bottom: 3%;
+     right: 3%;
+     z-index: 9999;
+     border-radius: 50%;
+     background-color:  #ff6000;
+ 
+     transition: all 0.5s ease-in-out;
+     cursor: pointer;
+     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .bugDetectorContainer:hover{
+     transform: scale(1.1);
+ }
+ 
+ .whiteCircle{
+     height: 80%;
+     width: 80%;
+     border: 3px solid white;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+ }
+ 
+ .bugIcon{
+     color: var(--white-pure);
+     width: 20px;
+     height: 20px;
+     animation: bounceIn 0.75s ease-in-out forwards;
+ }
+ 
+ .shader{
+     position: fixed;
+     width: 100vw;
+     height: 100vh;
+     z-index: 999;
+     background-color: rgba(0, 0, 0, 0.5);
+ }
+ 
+ 
+ 
+ .bugDetectorForm{
+     position: fixed;
+     top: 5%;
+     right: 3%;
+     background-color:  #ff6000;
+     background-color: var(--white-pure);
+     width: 400px;
+     height: 80vh;
+     z-index: 9999;
+     border-radius: 8px;
+     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     transform: scale(0);
+ }
+ 
+ 
+ 
+ .bugDetectorForm.active{
+     animation: bounceIn 0.75s ease-in-out forwards;
+ }
+ 
+ 
+ 
+ 
+ @keyframes bounceIn {
+     0% {
+       opacity: 0;
+       transform: scale(0.3);
+     }
+     50% {
+       opacity: 1;
+       transform: scale(1.05);
+     }
+     70% {
+       transform: scale(0.9);
+     }
+     100% {
+       transform: scale(1);
+     }
+   }
+ 
+   @keyframes bounceOut {
+     0% {
+      
+       transform: scale(1);
+     }
+     50% {
+     
+       transform: scale(0.9);
+     }
+     70% {
+     
+       opacity: 1;
+       transform: scale(1.05);
+     }
+     100% {
+    
+       opacity: 0;
+       transform: scale(0.3);
+     }
+   }
+ 
+   .bugDetectorForm.notActive{
+     animation: bounceOut 0.75s ease-in-out forwards;
+ }
+ 
+ .title{
+     color: var(--white-pure);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     letter-spacing: 2px;
+     margin-bottom: 0;
+     color: #ff6000;
+ 
+ }
+ 
+ .intro{
+     color: var(--white-pure);
+     font-size: 14px;
+     width: 90%;
+     text-align: center;
+     color: var(--light-grey);
+    
+ }
+ 
+ .form{
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     width: 90%;
+     height: 55%;
+     gap: 20px;
+  
+ }
+ 
+ .input{
+     background-color: var(--white-pure);
+     border-radius: 8px;
+     border: none;
+     outline: none;
+     height: 32px;
+     width: 100%;
+     padding: 5px 10px;
+     box-sizing: border-box;
+     font-size: 14px;
+     border: 1px solid #ff6000;
+ }
+ 
+ .input::placeholder{
+     color: var(--light-grey);
+ }
+ 
+ .input:focus, .textArea:focus{
+     border: 2px solid #ff6000;
+ }
+ 
+ .textArea{
+     width: 100%;
+     height: 70%;
+     background-color: var(--white-pure);
+     border-radius: 8px;
+     border: none;
+     outline: none;
+     padding: 5px 10px;
+     box-sizing: border-box;
+     font-size: 14px;
+     border: 1px solid #ff6000;
+ }
+ 
+ .btn{
+     width: 100%;
+     background-color: #ff6000;
+     color: var(--white-pure);
+     padding: 5px 10px ;
+     box-sizing: border-box;
+     height: 32px;
+     border-radius: 8px;
+     border: none;
+     outline: none;
+     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+     margin-top: auto;
+     margin-bottom: 10px;
+     cursor: pointer;
+     font-weight: 600;
+     letter-spacing: 2px;
+ 
+ }
+ 
+ .noShow{
+     opacity: 0;
+ }
+ 
+ .noShowTitle{
+     color: var(--white-pure);
+ }
+ 
+ .noShowBackground{
+   background-color: #ff6000;
+ }
+ 
+ .loaderContainer{
+     height:100%;
+     position: absolute;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%;}
+ 
+ @media (max-width:600px){
+     .bugDetectorContainer{
+      
+        /*  width: clamp(50px, 17.15vw + 0.12rem, 75px);
+         height: clamp(50px, 17.15vw + 0.12rem, 75px); */
+         width: clamp(35px, 11.8vw + 0.12rem, 50px);
+         height: clamp(35px, 11.8vw + 0.12rem, 50px);
+          position: fixed;
+          bottom: 3%;
+          right: 3%;
+          z-index: 9999;
+          border-radius: 50%;
+          background-color:  #ff6000;
+      
+          transition: all 0.5s ease-in-out;
+          cursor: pointer;
+          box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      
+      .bugDetectorContainer:hover{
+          transform: unset
+      }
+      
+      .whiteCircle{
+          height: 80%;
+          width: 80%;
+          border: 3px solid white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+      }
+      
+      .bugIcon{
+          color: var(--white-pure);
+       
+          width: clamp(20px, 6.45vw + 0.12rem, 30px);
+     
+          height: clamp(20px, 6.45vw + 0.12rem, 30px);
+          font-size: clamp(20px, 6.45vw + 0.12rem, 40px);;
+          animation: bounceIn 0.75s ease-in-out forwards;
+      }
+ 
+      .shader{
+         z-index: 100;
+      }
+ 
+     .bugDetectorForm{
+         position: fixed;
+         top: 0%;
+         right: unset;
+         left: unset;
+         background-color:  #ff6000;
+         background-color: var(--white-pure);
+         width: 100vw;
+         height: 85vh;
+         z-index: 100;
+         border-radius: 8px;
+         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+ 
+   
+ 
+     .intro{
+         font-size: clamp(14px, 4vw + 0.12rem 16px);
+     }
+ 
+     .form{
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         width: 90%;
+         height: 65%;
+         gap: 20px;
+      
+     }
+ 
+     .input, .textArea{
+         font-size: clamp(14px, 4vw + 0.12rem 16px);   
+     }
+     .btn{
+         font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+     }
+ 
+    
+ }
+ 
+ @media (min-width:601px) and (max-width:1023px){
+     .bugDetectorForm{
+         position: fixed;
+         top: unset;
+         bottom: calc(5% + 50px);
+         right: 3%;
+         background-color:  #ff6000;
+         background-color: var(--white-pure);
+         width: 400px;
+         height: 50vh;
+         min-height: 500px;
+         z-index: 9999;
+         border-radius: 8px;
+         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+ }
+ 
+ 
