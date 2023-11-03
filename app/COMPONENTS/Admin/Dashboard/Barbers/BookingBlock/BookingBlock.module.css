@@ -1,0 +1,289 @@
+.block {
+    display: flex;
+    flex-direction: column;
+    min-height: fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 80%;
+
+box-sizing: border-box;
+  }
+  
+  .header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 35px;
+
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background-color: var(--dark-grey);
+    border-radius: 5px 5px 0 0 ;
+  }
+  
+  .header.active {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+  }
+  
+
+  
+  .sideA,
+  .sideB {
+    display: flex;
+    height: 100%;
+  
+    align-items: center;
+  }
+  
+  .sideA {
+    width: 66%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .time {
+    font-family: var(--heading-font);
+    color: var(--dark-yellow);
+    font-size: 16px;
+    margin: 0;
+    width: 50%;
+  }
+  
+  .name {
+    margin: 0;
+    font-family: var(--heading-font);
+    color: var(--white-pure);
+    width: 50%;
+  
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .sideB {
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .price {
+    color: var(--dark-yellow);
+    font-family: var(--price-font);
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .bottom {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 5px;
+    background-color: var(--dark-grey);
+    border-radius: 0 0 5px 5px;
+
+  }
+  
+
+  
+  .services {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .serviceLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .serviceName {
+    margin: 0;
+    font-family: var(--text-font);
+    color: var(--light-grey);
+    font-weight: 200;
+    font-size: 16px;
+  }
+  
+  .serviceDuration {
+    margin: 0;
+    font-family: var(--text-font);
+    color: var(--light-grey);
+    font-weight: 200;
+    font-size: 16px;
+  }
+  
+  .emailLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .emailLabel {
+    margin: 0;
+    font-family: var(--text-font);
+    color: var(--light-grey);
+    font-weight: 200;
+    font-size: 16px;
+  }
+  
+  .email {
+    margin: 0;
+    font-family: var(--text-font);
+    color: var(--light-grey);
+    font-weight: 200;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 600px) {
+    .block {
+      width: 100%;
+    }
+  
+    .header {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      height: fit-content;
+      padding: 10px;
+      gap: 5px;
+    }
+  
+    .header.active {
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+  
+    .header:hover {
+      cursor: pointer;
+    }
+  
+    .sideA,
+    .sideB {
+      display: flex;
+      height: 100%;
+
+      align-items: center;
+    }
+  
+    .sideA {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .time {
+      font-family: var(--heading-font);
+      color: var(--dark-yellow);
+      font-size: clamp(18px, 5.72vw + 0.12rem, 22px);
+      margin: 0;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .name {
+      margin: 0;
+      font-family: var(--heading-font);
+      color: var(--white-pure);
+      width: 100%;
+  
+      text-align: center;
+      font-size: clamp(18px, 5.72vw + 0.12rem, 22px);
+    }
+  
+    .sideB {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+ 
+    }
+  
+    .price {
+      color: var(--dark-yellow);
+      font-family: var(--price-font);
+      font-size: 18px;
+      margin: 0;
+      text-align: center;
+
+    }
+  
+    .bottom {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      gap: 10px;
+      background-color: var(--dark-grey);
+      border-radius: 0 0 5px 5px;
+
+    }
+  
+ 
+  
+    .services {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: fit-content;
+    }
+  
+    .serviceLine {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: fit-content;
+    }
+  
+    .serviceName {
+      margin: 0;
+      font-family: var(--text-font);
+      color: var(--light-grey);
+      font-weight: 200;
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+    }
+  
+    .serviceDuration {
+      margin: 0;
+      font-family: var(--text-font);
+      color: var(--light-grey);
+      font-weight: 200;
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+    }
+  
+    .emailLine {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .emailLabel {
+      margin: 0;
+      font-family: var(--text-font);
+      color: var(--light-grey);
+      font-weight: 200;
+      font-size: 16px;
+    }
+  
+    .email {
+      margin: 0;
+      font-family: var(--text-font);
+      color: var(--light-grey);
+      font-weight: 200;
+      font-size: 16px;
+    }
+  }

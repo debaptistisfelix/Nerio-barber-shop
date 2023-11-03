@@ -1,0 +1,71 @@
+.modalContainer{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.modal{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    gap: 20px;
+}
+
+.modalParag{
+    color: var(--dark-grey);
+    font-size: 16px;
+    font-family: var(--text-font);
+    text-align: center;
+}
+
+.btnBox{
+    display: flex;
+    gap: 20px;
+}
+
+.btn{
+ width: 120px;
+ height: 42px;
+ background-color: var(--dark-grey  );
+ color: var(--white-pure);
+ padding: 10px 20px;
+ box-sizing: border-box;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ border-radius: 8px;
+}
+
+@media (max-width:600px) and  (hover:none) and (pointer:coarse){
+    .modal{
+        width: 90%;
+    }
+
+    .btnBox{
+        width: 90%;
+    }
+
+    .btn{
+        width: 45%;
+    }
+}
+
+@media (max-width:1023px){
+    .modalContainer{
+        width: 100%;
+    }
+}
+

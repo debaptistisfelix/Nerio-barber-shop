@@ -1,0 +1,143 @@
+.servicesLists {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .errorMsg {
+    font-family: var(--text-font);
+    font-size: 16px;
+    color: var(--light-grey);
+    margin: 20px 0;
+  }
+  
+  .categories {
+    display: flex;
+    width: 60%;
+    height: fit-content;
+  
+    justify-content: space-between;
+  }
+  
+  .categoryOption {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    border-radius: 50%;
+    height: 60px;
+    
+    cursor: pointer;
+  }
+  
+  .expandingBg {
+    background-color: var(--dark-grey);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    transform: scale(0);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  .expandingBg.active {
+    animation: expandingBg 0.75s forwards;
+  }
+  
+  @keyframes expandingBg {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .scissorsIcon,
+  .razorImg,
+  .bottleImg {
+    z-index: 2;
+    color: var(--dark-yellow);
+  
+  }
+  
+  .scissorsIcon {
+    font-size: 25px;
+  }
+  
+  .razorImg {
+    width: 35px;
+  }
+  
+  .bottleImg {
+    width: 45px;
+  }
+  
+  .servicesList {
+    width: 100%;
+    height: 500px;
+  margin-top: 20px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+
+  .servicesList::-webkit-scrollbar {
+    display: none;
+  }
+  
+  @media (max-width: 600px) {
+    .servicesLists {
+      width: 100%;
+     
+      height: fit-content;
+   
+    }
+    .categories {
+      display: flex;
+      width: 85%;
+      height: clamp(40px, 13.58vw + 0.12rem, 60px);
+  
+      justify-content: space-between;
+    }
+  
+    .categ {
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+      border-radius: 10px;
+    }
+  
+    .servicesList {
+      margin: 20px 0;
+   
+    overflow-x: visible;
+      height: 80vh;
+      gap: 20px;
+      align-items: center;
+  width: 100%;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .servicesList {
+      margin:  30px 0;
+   
+      height: 400px;
+      padding: 30x 0;
+
+    }
+  }

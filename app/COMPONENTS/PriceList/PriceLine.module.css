@@ -1,0 +1,30 @@
+.line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px dotted var(--white-pure);
+  }
+  
+  .label {
+    color: var(--white-pure);
+    font-weight: 600;
+  letter-spacing: 1px;
+    font-family: var(--label-font);
+    margin: 0;
+  }
+  
+  .price {
+    color: var(--dark-yellow);
+    color: var(--dark-yellow);
+    margin: 0;
+    font-weight: bold;
+  
+    font-family: var(--price-font);
+  }
+  @media (max-width:500px) and (hover:none) and (pointer:coarse){
+    .label, .price{
+        font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+    }
+
+  }

@@ -1,0 +1,226 @@
+.serviceLine {
+    display: flex;
+    width: 90%;
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 5px 10px;
+
+    transition: all 0.3s ease-in-out;
+    margin: 0;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .serviceLine.active {
+    background-color: var(--dark-yellow);
+    border-radius: 8px;
+     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);;
+  }
+  
+  .serviceLine:hover > .service > .plusIcon {
+    opacity: 1;
+  }
+  
+  .service {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    font-weight: bolder;
+    color: var(--white-pure);
+    font-family: var(--label-font);
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+
+
+
+
+ 
+
+
+
+
+  @keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      background-color: var(--dark-yellow);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .plusIcon {
+    border-radius: 5px;
+    color: var(--light-grey);
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: all 0.3 ease-out;
+  }
+
+  .checkIcon{
+    border-radius: 5px;
+    color: var(--white-pure);
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    transition: all 0.3 ease-out;
+  }
+  
+  .duration {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: var(--light-grey);
+    font-weight: 200;
+    font-size: 18px;
+  
+    font-family: var(--text-font);
+  }
+
+  .duration.active{
+    color: var(--dark-grey)
+  }
+  
+  .clockIcon {
+    margin-right: 5px;
+  }
+
+  .clockIcon.active{
+    color: var(--dark-grey)
+  }
+  
+  .price {
+    width: 15%;
+  
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    color: var(--dark-yellow);
+    font-family: var(--price-font);
+    font-size: 18px;
+  }
+
+  .price.active{
+    color: white;
+  }
+
+ 
+  
+  @media (max-width: 600px) {
+    .serviceLine {
+      display: flex;
+      width: 90%;
+      flex-wrap: wrap;
+      height: fit-content;
+      box-sizing: border-box;
+      padding: 0px 10px;
+
+      transition: all 0.3s ease-in-out;
+      margin: 0;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+  
+  
+    .serviceLine:hover > .service > .plusIcon {
+      opacity: unset;
+    }
+
+   
+  
+    .serviceLine.active {
+      background-color: var(--dark-yellow);
+      width: 85%;
+      padding: 0px 5px ;
+    }
+  
+    .service {
+      height: 100%;
+      width: 100%;
+     /*  background-color: var(--dark-yellow); */
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      color: var(--white-pure);
+      font-family: var(--label-font);
+    
+      font-size: clamp(18px, 5.72vw + 0.12rem, 22px);
+      letter-spacing: 1px;
+    }
+
+  
+  
+    .plusIcon, .checkIcon {
+      border-radius: 5px;
+      color: var(--white-pure);
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+      box-sizing: border-box;
+      padding: 5px;
+      opacity: 1;
+      transition: all 0.3 ease-out;
+    }
+  
+    .duration {
+      width: 40%;
+  
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      color: var(--light-grey);
+      font-weight: 200;
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+  
+      font-family: var(--text-font);
+    }
+
+    .duration.active{
+      color: var(--white-pure)
+    }
+  
+    .clockIcon {
+      margin-right: 5px;
+    }
+
+    .clockIcon.active{
+      color: var(--white-pure)
+    }
+  
+    .price {
+      width: 40%;
+  
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      color: var(--dark-yellow);
+      font-family: var(--price-font);
+      font-size: clamp(20px, 6.45vw + 0.12rem, 24px);
+    }
+  }

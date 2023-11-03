@@ -1,0 +1,171 @@
+.card {
+    width: 300px;
+    min-width: 300px;
+    height: 350px;
+    min-height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--dark-grey);
+    box-sizing: border-box;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+ 
+  }
+  
+
+  
+  .clientImg {
+    border-radius: 50%;
+ 
+  }
+  
+  .name {
+    color: var(--white-pure);
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: var(--heading-font);
+    letter-spacing: 1px;
+    margin-bottom: 0;
+  }
+  
+  .text {
+    color: var(--light-grey);
+    font-family: var(--text-font);
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+  
+    margin: 0;
+  }
+  
+  .starsBox {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 5px 0;
+  }
+  
+  .star {
+    color: var(--star-yellow);
+    width: 25px;
+    height: 25px;
+  }
+  
+  @media (max-width: 600px) {
+    .card {
+      width: 100%;
+      min-width: 100%;
+      max-width: 300px;
+      height: fit-content;
+      gap: 10px;
+      
+     
+    }
+    .clientImg {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: none;
+    }
+  
+    .name {
+      font-size: clamp(20px, 6.45vw + 0.12rem, 22px);
+      text-align: center;
+      margin: 0;
+    }
+  
+    .text {
+      font-size: clamp(14px, 4vw + 0.12rem, 16px);
+      height: fit-content;
+
+    }
+
+    .starsBox {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+      margin:  0;
+    }
+  
+    .star {
+      width: clamp(20px, 6.45vw + 0.12rem, 22px);
+      height: clamp(20px, 6.45vw + 0.12rem, 22px);
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .card {
+      min-width: 100px;
+      width: 250px;
+      height: 280px;
+      min-height: fit-content;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      background-color: var(--dark-grey);
+      box-sizing: border-box;
+      padding: 15px;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+  
+
+  
+    .clientImg {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+    }
+  
+    .name {
+      color: var(--white-pure);
+      margin-top: 10px;
+      font-size: 20px;
+      height: 20%;
+      padding: 0 10px;
+      font-family: var(--heading-font);
+      letter-spacing: 1px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  
+    .text {
+      color: var(--light-grey);
+      font-family: var(--text-font);
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: fit-content;
+  
+      margin: 0;
+    }
+  
+    .starsBox {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+      margin: 5px 0;
+    }
+  
+    .star {
+      color: var(--star-yellow);
+      width: 25px;
+      height: 25px;
+    }
+  }

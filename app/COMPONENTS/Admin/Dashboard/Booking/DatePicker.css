@@ -1,0 +1,287 @@
+/* datetime.css */
+
+.datePickerBox {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .datePickerBox .react-datetime-picker {
+    position: relative;
+  }
+  
+  .datePickerBox .rdt {
+    position: relative;
+    width: fit-content;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .datePickerBox .rdt input {
+    height: 40px;
+    width: 150px;
+    order: 2;
+    display: block;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid var(--dark-yellow);
+    background-color: #191919;
+    color: var(--dark-yellow);
+    font-size: 18px;
+    padding: 10px;
+  
+    font-family: var(--heading-font);
+  }
+  
+  .datePickerBox .rdtPicker {
+    order: 1;
+    display: none;
+    position: absolute;
+    font-family: var(--heading-font);
+    color: var(--dark-yellow);
+    z-index: 2;
+    width: 400px;
+    height: 350px;
+    top: -100px;
+    left: 110%;
+  
+    background-color: var(--dark-grey);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--dark-yellow);
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .datePickerBox .rdtOpen .rdtPicker {
+    display: block;
+  }
+  
+  .datePickerBox .rdtPicker table {
+    /*  height: 350px; */
+    min-height: 100%;
+    width: 100%;
+  
+    margin: 0;
+  }
+  .datePickerBox .rdtPicker td,
+  .rdtPicker th {
+    text-align: center;
+    height: 39px;
+  }
+  
+  .datePickerBox .rdtPicker td:hover {
+    background-color: var(--white-pure);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .datePickerBox .rdtPicker .rdtTime {
+    display: none;
+  }
+  
+  .datePickerBox .rdtPicker td.rdtToday {
+    position: relative;
+  }
+  .datePickerBox .rdtPicker td.rdtToday:before {
+    content: "";
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-bottom: 7px solid var(--dark-yellow);
+    border-top-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+  }
+  .datePickerBox .rdtPicker td.rdtActive,
+  .rdtPicker td.rdtActive:hover {
+    background-color: var(--dark-yellow);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+  .datePickerBox .rdtPicker td.rdtActive.rdtToday:before {
+    border-bottom-color: #fff;
+  }
+  
+  .datePickerBox .rdtPicker th {
+    border-bottom: 1px solid var(--dark-yellow);
+  }
+  .datePickerBox .rdtPicker .dow {
+    width: 14.2857%;
+    border-bottom: none;
+    cursor: default;
+  }
+  .datePickerBox .rdtPicker th.rdtSwitch {
+    width: 100px;
+  }
+  .datePickerBox .rdtPicker th.rdtNext,
+  .datePickerBox .rdtPicker th.rdtPrev {
+    font-size: 21px;
+    vertical-align: top;
+  }
+  
+  .datePickerBox .rdtPicker th.rdtDisabled,
+  .datePickerBox .rdtPicker th.rdtDisabled:hover {
+    background: none;
+    color: #999999;
+    cursor: not-allowed;
+  }
+  .datePickerBox .rdtPicker thead tr:first-of-type th {
+    cursor: pointer;
+  }
+  .datePickerBox .rdtPicker thead tr:first-of-type th:hover {
+    background-color: var(--dark-yellow);
+    color: var(--dark-grey);
+  }
+  
+  .datePickerBox .rdtPicker td:hover {
+    background-color: var(--dark-yellow);
+    color: var(--dark-grey);
+  }
+  
+  @media (max-width: 600px) {
+    .datePickerBox {
+      flex-direction: column;
+    }
+    .rdt {
+      width: 95%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .datePickerBox .rdt input {
+      height: 40px;
+      width: 100%;
+      order: 2;
+      display: block;
+      margin: 20px 0;
+      border-radius: 5px;
+      box-sizing: border-box;
+      outline: none;
+      border: 1px solid var(--dark-yellow);
+      background-color: #191919;
+      color: var(--dark-yellow);
+      font-size: clamp(20px, 6.45vw + 0.12rem, 25px);
+      padding: 10px;
+      text-align: center;
+      font-family: var(--heading-font);
+    }
+  
+    .rdtPicker {
+      order: 1;
+      display: block;
+      position: relative;
+  
+      background-color: var(--dark-grey);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+      border: 3px solid var(--dark-yellow);
+      border-radius: 5px 0 0 5px;
+    }
+  
+    .datePickerBox .rdtPicker {
+      order: 1;
+      display: block;
+      position: relative;
+      font-family: var(--heading-font);
+      color: var(--dark-yellow);
+      z-index: 2;
+      width: 90vw;
+      height: fit-content;
+      top: 0;
+      left: 0;
+  
+      background-color: var(--dark-grey);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+      border: 3px solid var(--dark-yellow);
+      border-radius: 5px 0 0 5px;
+    }
+  
+    .rdtPicker td,
+    .rdtPicker th {
+      text-align: center;
+      height: 39px;
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+    }
+    .rdtPicker th.rdtNext,
+    .rdtPicker th.rdtPrev {
+      font-size: clamp(21px, 6.45vw + 0.12rem, 30px);
+      vertical-align: top;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 1023px) {
+
+    .datePickerBox .rdt {
+      position: relative;
+      width: fit-content;
+      width: fit-content;
+      height: fit-content;
+      width: 100%;
+      height: 300px;
+ 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+     
+    }
+    
+    .datePickerBox .rdt input {
+      height: 40px;
+      width: 150px;
+      order: 2;
+      display: block;
+      border-radius: 5px;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      color: var(--dark-yellow);
+      font-size: 18px;
+      padding: 10px;
+    z-index: 99;
+    position:relative;
+
+ text-align: center;
+      font-family: var(--heading-font);
+   
+    }
+
+    .datePickerBox{
+      display: flex;
+      flex-direction: column;
+    }
+    .datePickerBox .rdtPicker {
+      order: 1;
+      display: block;
+      position: relative;
+      font-family: var(--heading-font);
+      color: var(--dark-yellow);
+      z-index: 2;
+      width: 90%;
+      height: 250px;
+  
+top: unset;
+left: unset;
+      background-color: var(--dark-grey);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+      border: 3px solid var(--dark-yellow);
+      border-radius: 5px 0 0 5px;
+    }
+
+    .datePickerBox .rdtPicker table {
+       height: 250px;
+      min-height: 100%;
+      width: 100%;
+  
+      margin: 0;
+    }
+    .datePickerBox .rdtPicker td,
+    .rdtPicker th {
+      text-align: center;
+      height: 15%;
+    }
+  }

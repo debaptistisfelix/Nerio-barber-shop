@@ -1,0 +1,40 @@
+.loader{
+ 
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.point{
+    background-color: var(--white-pure);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.point1{
+    animation: jumpingAnimation 0.6s 0.1s ease-in-out infinite;
+}
+.point2{
+    animation: jumpingAnimation 0.6s 0.2s ease-in-out infinite;
+}
+.point3{
+    animation: jumpingAnimation 0.6s 0.3s ease-in-out infinite;
+}
+
+
+@keyframes jumpingAnimation {
+    0% {
+      transform: translate3d(0, 0,0);
+    }
+    50% {
+      transform: translate3d(0, 15px,0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+

@@ -1,0 +1,297 @@
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    height: fit-content;
+    width: 100%;
+    background-color: var(--dark-grey);
+
+    border-radius: 5px;
+  }
+
+  .deleteAnimation{
+    animation: zoomOutAnimation 0.75s ease forwards;
+  }
+
+  @keyframes zoomOutAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    10%{ transform: scale(1.1);}
+    100% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+  }
+  
+  .formBlock {
+    padding: 10px;
+    padding-right: 20px;
+  }
+  
+  .sideA {
+    display: flex;
+    height: 100%;
+    width: 70%;
+    align-items: center;
+  }
+  
+  .sideB {
+    display: flex;
+    height: 100%;
+    width: 30%;
+    align-items: center;
+  }
+  
+  .serviceName,
+  .servicePrice,
+  .serviceDuration {
+    margin: 0;
+  }
+  
+  .serviceName {
+    width: 80%;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: var(--text-font);
+    color: var(--white-pure);
+  }
+  
+  .serviceDuration {
+    width: 20%;
+    font-size: 16px;
+    font-family: var(--text-font);
+    font-weight: 200;
+    color: var(--light-grey);
+  }
+  
+  .servicePrice {
+    width: 70%;
+  
+    display: flex;
+    justify-content: center;
+    font-family: var(--price-font);
+    color: var(--dark-yellow);
+    font-size: 20px;
+  }
+  
+  .interactions {
+    width: 30%;
+    color: var(--light-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .icon {
+    color: var(--light-grey);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .icon:hover {
+    color: var(--white-pure);
+    cursor: pointer;
+  }
+  
+  .nameInputBox {
+    height: fit-content;
+    width: 80%;
+    display: flex;
+  }
+  
+  .nameInput {
+    height: 25px;
+    width: 90%;
+    color: var(--white-pure);
+    font-family: var(--text-font);
+    font-size: 16px;
+  }
+  
+  .durationInputBox {
+    width: 20%;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .durationInput {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+    color: var(--light-grey);
+    font-size: 16px;
+  }
+  
+  .priceInputBox {
+    text-align: center;
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .euro {
+    width: 20px;
+  }
+  
+  .priceInput {
+    width: 50px;
+    text-align: center;
+    height: 25px;
+    color: var(--dark-yellow);
+    font-family: var(--price-font);
+    font-size: 20px;
+  }
+  
+  .interactionForm {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .input {
+    box-sizing: border-box;
+    background-color: var(--dark-grey);
+    border: 1px solid var(--dark-yellow);
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .input:focus {
+    border: 2px solid var(--dark-yellow);
+  }
+  
+  @media (max-width: 600px) {
+    .block {
+      flex-direction: column;
+      padding: 10px;
+      gap: 10px;
+      width: 90%;
+    }
+  
+    .formBlock {
+      padding: 10px;
+      padding-right: 10px;
+    }
+  
+    .sideA {
+      height: 50%;
+      width: 100%;
+      align-items: center;
+    }
+  
+    .sideB {
+      height: 50%;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .serviceName {
+      width: 70%;
+      font-weight: 400;
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+      font-family: var(--text-font);
+      color: var(--white-pure);
+    }
+  
+    .serviceDuration {
+      width: 30%;
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+      font-family: var(--text-font);
+      font-weight: 200;
+      text-align: end;
+      color: var(--light-grey);
+    }
+  
+    .servicePrice {
+      width: 70%;
+  
+      display: flex;
+      justify-content: flex-start;
+      font-family: var(--price-font);
+      color: var(--dark-yellow);
+      font-size: clamp(20px, 6.45vw + 0.12rem, 24px);
+    }
+  
+    .interactions {
+      width: clamp(50px, 17.15vw + 0.12rem, 70px);
+      color: var(--light-grey);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .icon {
+      width: clamp(16px, 4.72vw + 0.12rem, 20px);
+      height: clamp(16px, 4.72vw + 0.12rem, 20px);
+    }
+  
+    .nameInputBox {
+      height: fit-content;
+      width: 70%;
+      display: flex;
+    }
+  
+    .nameInput {
+      height: 25px;
+      width: 90%;
+      color: var(--white-pure);
+      font-family: var(--text-font);
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+    }
+  
+    .durationInputBox {
+      width: 30%;
+      height: fit-content;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  
+    .durationInput {
+      width: clamp(40px, 13.58vw + 0.12rem, 60px);
+      height: 25px;
+      text-align: center;
+      color: var(--light-grey);
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+    }
+  
+    .priceInputBox {
+      text-align: center;
+      width: 50%;
+      height: fit-content;
+      display: flex;
+      justify-content: flex-start;
+    }
+  
+    .euro {
+      width: 20px;
+    }
+  
+    .priceInput {
+      width: clamp(50px, 17.15vw + 0.12rem, 70px);
+      text-align: center;
+      height: 25px;
+      color: var(--dark-yellow);
+      font-family: var(--price-font);
+  
+      font-size: clamp(20px, 6.45vw + 0.12rem, 24px);
+    }
+  
+    .interactionForm {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .input {
+      box-sizing: border-box;
+      background-color: var(--dark-grey);
+      border: 1px solid var(--dark-yellow);
+      border-radius: 5px;
+      outline: none;
+    }
+  }

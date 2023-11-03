@@ -1,0 +1,53 @@
+.timeSlot {
+    margin: 5px;
+    border: none;
+    color: var(--white-pure);
+    background-color: var(--dark-grey);
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-family: var(--heading-font);
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  
+  }
+  
+  .timeSlot:hover {
+   transform: scale(1.05);
+  }
+  
+  .timeSlot.active {
+    color: white;
+    background-color: var(--dark-yellow);
+    filter: brightness(100%);
+  }
+  
+  @media (max-width: 600px) {
+    .timeSlot {
+      margin: 5px;
+      border: none;
+      color: var(--white-pure);
+      background-color: var(--dark-grey);
+      padding: 5px 10px;
+      box-sizing: border-box;
+      font-family: var(--heading-font);
+      border-radius: 5px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+     
+    }
+  
+    .timeSlot:hover {
+      transform: unset;
+    }
+  
+    .timeSlot.active {
+      color: white;
+      background-color: var(--dark-yellow);
+      filter: brightness(100%);
+    }
+  }

@@ -1,0 +1,108 @@
+.barberCard {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+  }
+
+  
+/*   .barberCard:hover {
+    transform: scale(1.05);
+  }
+   */
+
+  .barberImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  
+  .barberImg.active {
+    border: 3px solid var(--dark-yellow);
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+
+  
+  .barberName {
+    margin: 0;
+    font-family: var(--heading-font);
+    color: var(--light-grey);
+    font-size: 16px;
+  }
+  
+  .barberName.active {
+    color: var(--dark-yellow);
+  }
+  
+  @media (max-width: 600px) {
+    .barberCard {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      width: 100px;
+      margin: 10px 0;
+      width: 33%;
+      opacity: 0.5;
+      gap: 5px;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    @keyframes bounce {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  
+    .barberCard:hover {
+      opacity: 1;
+    }
+  
+    .barberCard.active {
+      opacity: 1;
+    }
+  
+    .barberImg {
+      width: clamp(60px, 20.72vw + 0.12rem, 80px);
+      height: clamp(60px, 20.72vw + 0.12rem, 80px);
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+  
+    .barberImg.active {
+      border: 3px solid var(--dark-yellow);
+      box-sizing: border-box;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    }
+  
+    .barberName {
+      margin: 0;
+      font-family: var(--heading-font);
+      color: var(--light-grey);
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+    }
+  
+    .barberName.active {
+      color: var(--dark-yellow);
+    }
+  }
+  
+  @media (min-width:600px) and (max-width: 1023px) {
+    .barberCard {
+      width: 45%;
+    }
+  }

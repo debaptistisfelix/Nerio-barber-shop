@@ -1,0 +1,77 @@
+.bookingSection {
+    width: 80%;
+    /* border: 1px dotted black; */
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+    max-width: 1280px;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  
+  .title {
+    color: var(--light-orange);
+    font-family: var(--heading-font);
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    height: 85%;
+    width: 100%;
+  }
+
+
+  
+  @media (max-width: 600px) {
+    .bookingSection {
+      width: 100%;
+    }
+    .title {
+      color: var(--light-orange);
+      font-family: var(--heading-font);
+      font-size: clamp(25px, 8.22vw + 0.12rem, 35px);
+      text-align: center;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  
+    .form {
+      height: fit-content;
+      width: 100%;
+    }
+  }
+
+  @media (max-width:600px) and (hover:none) and (pointer:coarse){
+    .title{
+      font-size: clamp(20px, 2.86vw + 0.12rem, 24px);
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .bookingSection {
+      width: 95%;
+      /* border: 1px dotted black; */
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      margin: 50px 0;
+      box-sizing: border-box;
+      align-items: center;
+    }
+  
+    .title {
+      color: var(--light-orange);
+      font-family: var(--heading-font);
+      font-size: 40px;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  
+    .form {
+      height: 85%;
+      width: 100%;
+    }
+  }

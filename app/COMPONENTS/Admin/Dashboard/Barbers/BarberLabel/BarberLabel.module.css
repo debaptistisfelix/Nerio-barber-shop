@@ -1,0 +1,37 @@
+.barberBlock{
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: var(--dark-grey);
+  justify-content: center;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.barberName{
+  font-size: 18px;
+}
+
+.deleteIcon{
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+}
+
+@media (hover:hover) and (pointer:fine){
+  .barberBlock:hover{
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width:600px) and (hover:none) and (pointer:coarse){
+  .barberBlock{
+    width: 90%;
+    max-width: unset;
+  }
+}

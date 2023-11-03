@@ -1,0 +1,326 @@
+
+.serviceList {
+    height: 100%;
+    padding-bottom: 10px;
+    max-height: 100%;
+    height: fit-content;
+    min-height: 420px;
+    width: 600px;
+    background-color: var(--dark-grey);
+    margin: 0 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 3px solid var(--dark-yellow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .topPoints {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .bottomPoints {
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .circle {
+    width: 15px;
+    height: 15px;
+    background-color: var(--dark-yellow);
+    border-radius: 50%;
+    margin: 10px;
+  }
+  
+  .logo {
+    width: 120px;
+    margin: 15px 0;
+  }
+  
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+  
+    overflow-y: scroll;
+    gap: 10px;
+    padding-bottom: 20px;
+    animation: bounceInFromLeft 1s forwards ease-out;
+    transform: translateX(-100%);
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+
+  .list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  @keyframes bounceInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  
+  @media (max-width: 600px) {
+    .optionsContainer {
+      width: 100%;
+      height: fit-content;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .options {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      min-height: fit-content;
+      margin-bottom: 30px;
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
+  
+    .option {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      width: fit-content;
+      height: fit-content;
+    }
+  
+    .optionBox {
+      width: 25vw;
+      height: 25vw;
+    }
+  
+    .expandingBg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: var(--dark-grey);
+      border-radius: 50%;
+      animation: expandingBg 0.75s forwards;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    }
+  
+    .optionBox:hover {
+      transform: none;
+    }
+  
+    .serviceIcon {
+      color: var(--dark-yellow);
+      width: clamp(25px, 8.22vw + 0.12rem, 40px);
+      height: clamp(25px, 8.22vw + 0.12rem, 40px);
+    }
+  
+    .serviceIcon.active {
+      animation: pulseIn 0.5s forwards;
+    }
+  
+    @keyframes pulseIn {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  
+    .optionTitle {
+      margin: 0;
+      color: var(--dark-yellow);
+      font-family: var(--heading-font);
+      text-align: center;
+      font-size: clamp(12px, 3.58vw + 0.12rem, 18px);
+      letter-spacing: 0px;
+    }
+  
+    .serviceList {
+      max-height: unset;
+      height: fit-content;
+      width: 95%;
+      background-color: var(--dark-grey);
+      margin: 0px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 3px solid var(--dark-yellow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+  
+    .topPoints {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  
+    .bottomPoints {
+      width: 100%;
+      height: fit-content;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .circle {
+      width: 15px;
+      height: 15px;
+      background-color: var(--dark-yellow);
+      border-radius: 50%;
+      margin: 10px;
+    }
+  
+    .logo {
+      width: clamp(150px, 52.86vw + 0.12rem, 250px);
+      margin: 30px 0;
+    }
+  
+    .list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: fit-content;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      animation: bounceInFromLeft 1s forwards ease-out;
+      transform: translateX(-100%);
+      padding-bottom: clamp(20px, 6.45vw + 0.12rem, 40px);
+      box-sizing: border-box;
+      gap: 25px;
+    }
+  
+    @keyframes bounceInFromLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      50% {
+        transform: translateX(10%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  
+   
+
+  
+    
+  }
+  
+  @media (min-width: 600px) and (max-width: 1023px) {
+    
+  
+    .serviceList {
+      height: 100%;
+      max-height: 100%;
+      height: 350px;
+      width: 600px;
+      background-color: var(--dark-grey);
+      margin: 0 10px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 3px solid var(--dark-yellow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+  
+    .topPoints {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  
+    .bottomPoints {
+      width: 100%;
+      height: fit-content;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .circle {
+      width: 15px;
+      height: 15px;
+      background-color: var(--dark-yellow);
+      border-radius: 50%;
+      margin: 10px;
+    }
+  
+    .logo {
+      width: 120px;
+      margin: 0;
+      margin-top: 10px;
+    }
+  
+    .list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: fit-content;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      animation: bounceInFromLeft 1s forwards ease-out;
+      transform: translateX(-100%);
+ 
+    
+    }
+
+  }

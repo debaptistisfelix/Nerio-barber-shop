@@ -1,0 +1,342 @@
+.AdminBooking {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  .booking {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+  }
+  
+  .dateBarberServiceBox {
+    width: 50%;
+    height: 100%;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .introDateBarberServiceBox {
+    font-family: var(--text-font);
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+
+    color: var(--light-grey);
+  }
+  
+  .barberChoiceBox {
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .barberOptions {
+    display: flex;
+    gap: 10px;
+
+  }
+  
+  .label {
+    color: var(--light-grey);
+    font-family: var(--text-font);
+  }
+  
+  .customerBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+  }
+  
+  .inputBox {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .customerLine {
+    width: 45%;
+  }
+  
+  .customerInput {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: var(--dark-grey);
+    color: var(--dark-yellow);
+  }
+  
+  .customerInput:focus {
+    border: 1px solid var(--dark-yellow);
+  }
+  
+  .recap {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .recapTitle {
+    color: var(--dark-yellow);
+    font-family: var(--heading-font);
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  
+  .confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    padding: 20px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 3px solid var(--dark-yellow);
+    animation: bounceInEntrance 1s ease-in-out forwards;
+  }
+
+  .loadingRequest{
+   width: 100%;
+   height: 200px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+
+  
+  
+  @keyframes bounceInEntrance {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    20% {
+      transform: scale(1.1);
+    }
+    40% {
+      transform: scale(0.9);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.03);
+    }
+    80% {
+      transform: scale(0.97);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .confirmationIcon {
+    color: var(--dark-yellow);
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .confirmationTitle {
+    color: var(--dark-yellow);
+    font-family: var(--heading-font);
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .confirmationParag {
+    color: var(--dark-yellow);
+    font-family: var(--text-font);
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .confirmationError {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    padding: 20px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 3px solid brown;
+    animation: bounceInEntrance 1s ease-in-out forwards;
+  }
+  
+  .confirmationErrorIcon {
+    color: brown;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .confirmationErrorTitle {
+    color: brown;
+    font-family: var(--heading-font);
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .confirmationErrorParag {
+    color: brown;
+    font-family: var(--text-font);
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  @media (max-width: 600px) {
+    .booking {
+      flex-direction: column;
+      padding-top: 50px;
+      box-sizing: border-box;
+    }
+  
+    .dateBarberServiceBox {
+      width: 100%;
+     
+      height: fit-content;
+    }
+  
+    .label {
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+    }
+  
+    .inputBox {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .customerLine {
+      width: 100%;
+    }
+    .customerInput {
+      min-width: 100%;
+      height: clamp(40px, 13.58vw + 0.12rem, 50px);
+      font-size: clamp(18px, 5.72vw + 0.12rem, 22px);
+    }
+  
+    .recap {
+      width: 100%;
+      height: fit-content;
+      margin: 20px 0;
+      box-sizing: border-box;
+    }
+  
+    .recapTitle {
+      font-size: clamp(20px, 6.45vw + 0.12rem, 30px);
+    }
+  
+    .confirmation {
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px 0;
+      width: 100%;
+      border-radius: 5px;
+      top: 0;
+      border: none;
+      background-color: var(--dark-yellow);
+      animation: bounceInEntrance 1s ease-in-out forwards;
+    }
+  
+    .confirmationIcon {
+      color: var(--white-pure);
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+    }
+  
+    .confirmationTitle {
+      color: var(--white-pure);
+      font-family: var(--heading-font);
+      margin: 0;
+      font-size: 30px;
+      text-align: center;
+    }
+  
+    .confirmationParag {
+      color: var(--white-pure);
+      font-family: var(--text-font);
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .loadingRequest{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left:0;
+      right:0;
+      bottom:0;
+      background-color: var(--dark-yellow);
+   
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .AdminBooking {
+      height: fit-content;
+      min-height: 100vh;
+      padding: 0;
+      padding-top: 10px;
+      padding-left: 20px;
+
+    }
+
+    .recap{
+   position: absolute;
+   top: 0;
+   right: 0;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+      min-height: 100vh;
+      width: 45%;
+      padding: 10px;
+  padding-top: 60px;
+      box-sizing: border-box;
+    }
+
+    .noWithTablet{
+      display: none;
+    }
+
+  .loadingRequest{
+    position: relative;
+    bottom: 0;
+   
+    width:100%
+  }
+   
+  }

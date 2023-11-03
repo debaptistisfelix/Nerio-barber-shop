@@ -1,0 +1,99 @@
+.timeDisplayer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .time {
+    font-family: "Montserrat", sans-serif;
+    color: var(--white-pure);
+    font-weight: 400;
+    font-size: 35px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 90%;
+    height: fit-content;
+    margin-bottom: 10px;
+  }
+  
+  .day {
+    font-family: var(--heading-font);
+    color: var(--dark-yellow);
+    font-weight: 200;
+    font-size: 25px;
+    margin: 0;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+  }
+  
+  .date {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    color: var(--dark-yellow);
+    font-weight: 200;
+    font-size: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .timeDisplayer {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .time {
+      font-family: "Montserrat", sans-serif;
+      color: var(--white-pure);
+      font-weight: 400;
+      font-size: clamp(25px, 8.22vw + 0.12rem, 30px);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      width: 70%;
+      height: fit-content;
+      margin-bottom: 10px;
+    }
+  
+    .day {
+      font-family: var(--heading-font);
+      color: var(--dark-yellow);
+      font-weight: 200;
+      font-size: clamp(20px, 6.45vw + 0.12rem, 25px);
+      margin: 0;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+  
+    .date {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      color: var(--dark-yellow);
+      font-weight: 200;
+      font-size: clamp(20px, 6.45vw + 0.12rem, 25px);
+    }
+  }
+
+
+  @media (min-width:600px) and (max-width:1023px){
+.timeDisplayer{
+  margin: 30px 0;
+}
+  }

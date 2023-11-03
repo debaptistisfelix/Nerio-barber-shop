@@ -1,0 +1,126 @@
+.card{
+    width: 400px;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginForm {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .loginTitle {
+    font-family: var(--heading-font);
+    font-size: 40px;
+    color: var(--dark-grey);
+    margin-bottom: 0;
+  }
+  
+
+
+
+  
+  .loginInputBox {
+    display: flex;
+    flex-direction: column;
+  
+    height: 150px;
+    justify-content: space-evenly;
+    gap: 10px;
+    width: 80%;
+    margin: 30px 0;
+    box-sizing: border-box;
+  }
+  .input {
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    color: var(--light-grey);
+  }
+  
+ 
+  
+
+  
+  .input:focus {
+    border: 2px solid var(--light-grey);
+  }
+  
+
+  
+  .button {
+    font-family: var(--text-font);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background-color: var(--dark-grey);
+    color: var(--white-pure);
+    padding: 10px;
+    box-sizing: border-box;
+    width: 80%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .button:hover {
+    filter: brightness(130%);
+  }
+
+  .button:disabled{
+    filter: brightness(30%);
+  }
+
+  .loading{
+    animation: glow 1s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1}
+  }
+
+
+  
+  .loginOutro {
+    color: var(--light-grey);
+    font-family: var(--text-font);
+    font-size: 14px;
+  }
+  
+  .highlight {
+    cursor: pointer;
+  }
+  
+  .highlight:hover {
+    filter: brightness(50%);
+  }
+  
+@media (max-width:600px) and (hover:none) and (pointer:coarse){
+    .card{
+        width: 100%;
+        max-width: 400px;
+        height: 100%;
+    }
+
+    .loginTitle {
+     
+        font-size: clamp(30px, 10vw + 0.12rem, 35px)
+   
+      }
+}

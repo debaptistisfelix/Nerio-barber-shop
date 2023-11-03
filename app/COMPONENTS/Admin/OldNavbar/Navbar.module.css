@@ -1,0 +1,200 @@
+.Navbar{
+    height: 100%;
+    width: max(20%, 300px);
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: flex-start;
+padding: 20px 0 ;
+    background-color: var(--dark-grey);
+    box-sizing: border-box;
+}
+
+.logoBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.dashboardTitle{
+    color: var(--dark-yellow);
+    font-family: var(--heading-font);
+    border: 1px solid var(--dark-yellow);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    margin:0;
+}
+
+.navLinks{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin:  0;
+    padding: 0;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+}
+
+.navLink{
+    color: var(--light-grey);
+    font-family: var(--text-font);
+    width: 70%;
+    padding: 10px 20px ;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.navLink.active{
+    background-color: var(--dark-yellow);
+    color: var(--white-pure);
+}
+
+.icon{
+    color: var(--white-pure);
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.logOutBtn{
+    font-family: var(--heading-font);
+    color: var(--dark-grey);
+    border: none;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    background-color: var(--dark-yellow);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    font-size: 16px;
+    width: 70%;
+    cursor: pointer;
+}
+
+
+
+@media (max-width:600px){
+    .Navbar{
+        position: absolute;
+        width: 100%;
+      min-height: 100vh;
+        height: fit-content;
+        z-index: 100;
+        left:-100%;
+     
+    }
+
+  
+    
+      .Navbar.active {
+        animation: showSideNav 0.5s ease-out forwards;
+      }
+    
+      .Navbar.notActive {
+        animation: hideSideNav 0.5s ease-out forwards;
+      }
+    
+      @keyframes showSideNav {
+        from {
+          /*  transform: translateX(-100%); */
+          left: -100%;
+        }
+        to {
+          left: 0;
+        }
+      }
+    
+      @keyframes hideSideNav {
+        from {
+          left: 0;
+        }
+        to {
+          left: -100%;
+        }
+      }
+
+      .homeLink{
+        width: 50%;
+        height: fit-content;
+      }
+
+      .logoImg{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      .dashboardTitle{
+        font-size: clamp(20px, 6.45vw + 0.12rem, 25px);
+        width: 70%;
+      }
+      .icon{
+        width: clamp(18px, 5.72vw + 0.12rem, 20px);
+        height: clamp(18px, 5.72vw + 0.12rem, 20px);
+      }
+
+      .navLink{
+        font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+      }
+
+      .logOutBtn{
+        font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+      }
+}
+
+@media (min-width:600px) and (max-width:1023px){
+    .Navbar{
+        position: absolute;
+        width: 50%;
+        z-index: 100;
+        left:-100%;
+        justify-content: flex-start;
+    }
+
+  
+    
+      .Navbar.active {
+        animation: showSideNav 0.5s ease-out forwards;
+      }
+    
+      .Navbar.notActive {
+        animation: hideSideNav 0.5s ease-out forwards;
+      }
+    
+      @keyframes showSideNav {
+        from {
+          /*  transform: translateX(-100%); */
+          left: -100%;
+        }
+        to {
+          left: 0;
+        }
+      }
+    
+      @keyframes hideSideNav {
+        from {
+          left: 0;
+        }
+        to {
+          left: -100%;
+        }
+      }
+
+      .navLinks{
+        margin: 30px 0;
+      }
+}

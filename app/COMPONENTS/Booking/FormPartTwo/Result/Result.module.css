@@ -1,0 +1,39 @@
+.results{
+    display: flex;
+    flex-wrap: wrap;
+  
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+
+
+
+
+
+
+.closedShop {
+    font-family: var(--text-font);
+    font-weight: 400;
+    text-align: center;
+    color: var(--light-grey);
+  }
+
+  @media(max-width:600px){
+    .closedShop {
+        font-family: var(--text-font);
+        font-weight: 400;
+        font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+        color: var(--light-grey);
+      }
+      .results{
+        display: flex;
+          flex-wrap: wrap;
+      
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: fit-content;
+    }
+  }

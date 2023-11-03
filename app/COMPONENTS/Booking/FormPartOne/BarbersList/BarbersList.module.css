@@ -1,0 +1,83 @@
+
+.barberChoice {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-evenly;
+  
+    margin:  0;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    flex-wrap: wrap;
+  }
+
+  .barberChoice::-webkit-scrollbar {
+    display: none;
+  }
+
+  .barberChoiceContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    margin: 20px 0;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+
+  .barberChoiceContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobileBarberIntro{display: none;}
+
+
+
+  @media (max-width: 600px) {
+
+
+.barberChoiceContainer{
+  width: 90%;
+  height: fit-content;
+  margin: 10px 0;
+}
+    
+  
+    .barberChoice {
+      display: flex;
+      width: 100%;
+      height: fit-content;
+      justify-content: center;
+      margin:  0;
+      flex-wrap: wrap;
+    }
+
+    .mobileBarberIntro{
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+      margin: 0;
+      width: 95%;
+      margin-bottom: 30px;
+  display: block;
+      color: var(--light-grey);
+      text-align: center;
+      font-family: var(--text-font);
+    }
+
+
+
+  }
+
+  @media (max-width:600px) and (hover:none) and (pointer:coarse){
+    .mobileBarberIntro{
+      font-size: clamp(14px, 4vw + 0.12rem, 16px);
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 1023px) {
+
+  
+    .barberChoice {
+      flex-wrap: wrap;
+    }
+  }

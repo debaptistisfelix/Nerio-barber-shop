@@ -1,0 +1,33 @@
+.slot {
+    margin: 5px;
+    background-color: var(--dark-grey);
+    color: var(--white-pure);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: var(--heading-font);
+    cursor: pointer;
+ 
+    height: fit-content;
+    transition: all 0.2s ease-out;
+  }
+  
+  .slot.active {
+    color: white;
+    background-color: var(--dark-yellow);
+
+  }
+  
+  .slot:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 600px) {
+    .slot {
+      font-size: clamp(18px, 5.72vw + 0.12rem, 22px);
+    }
+  
+    .slot.active {
+      color: white;
+      background-color: var(--dark-yellow);
+    }
+  }

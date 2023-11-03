@@ -1,0 +1,150 @@
+/* datetime.css */
+
+.react-datetime-picker {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .rdt {
+    display: flex;
+    width: fit-content;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1;
+  }
+  
+  .rdt input {
+    height: 40px;
+    width: 150px;
+    order: 2;
+    display: none;
+  }
+  
+  .rdtPicker {
+    order: 1;
+    display: block;
+    position: relative;
+    font-family: var(--heading-font);
+    color: var(--dark-yellow);
+    z-index: 1;
+    width: 400px;
+    height: 350px;
+    background-color: var(--dark-grey);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--dark-yellow);
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .rdtPicker table {
+    /*  height: 350px; */
+    min-height: 100%;
+    width: 100%;
+  
+    margin: 0;
+  }
+  .rdtPicker td,
+  .rdtPicker th {
+    text-align: center;
+    height: 39px;
+  }
+  
+  .rdtPicker td:hover {
+    background-color: var(--white-pure);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .rdtPicker .rdtTime {
+    display: none;
+  }
+  
+  .rdtPicker td.rdtToday {
+    position: relative;
+  }
+  .rdtPicker td.rdtToday:before {
+    content: "";
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-bottom: 7px solid var(--dark-yellow);
+    border-top-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+  }
+  .rdtPicker td.rdtActive,
+  .rdtPicker td.rdtActive:hover {
+    background-color: var(--dark-yellow);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+  .rdtPicker td.rdtActive.rdtToday:before {
+    border-bottom-color: #fff;
+  }
+  
+  .rdtPicker th {
+    border-bottom: 1px solid var(--dark-yellow);
+  }
+  .rdtPicker .dow {
+    width: 14.2857%;
+    border-bottom: none;
+    cursor: default;
+  }
+  .rdtPicker th.rdtSwitch {
+    width: 100px;
+  }
+  .rdtPicker th.rdtNext,
+  .rdtPicker th.rdtPrev {
+    font-size: 21px;
+    vertical-align: top;
+  }
+  
+  .rdtPicker th.rdtDisabled,
+  .rdtPicker th.rdtDisabled:hover {
+    background: none;
+    color: #999999;
+    cursor: not-allowed;
+  }
+  .rdtPicker thead tr:first-of-type th {
+    cursor: pointer;
+  }
+  .rdtPicker thead tr:first-of-type th:hover {
+    background-color: var(--dark-yellow);
+    color: var(--dark-grey);
+  }
+  
+  .rdtPicker td:hover {
+    background-color: var(--dark-yellow);
+    color: var(--dark-grey);
+  }
+  
+  @media (max-width: 600px) {
+    .rdt {
+      width: 95%;
+      height: fit-content;
+    }
+  
+    .rdtPicker {
+      order: 1;
+      display: block;
+      position: relative;
+      font-family: var(--heading-font);
+      color: var(--dark-yellow);
+      z-index: 99999;
+      width: 100%;
+      height: fit-content;
+      background-color: var(--dark-grey);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+      border: 3px solid var(--dark-yellow);
+      border-radius: 5px 0 0 5px;
+    }
+    .rdtPicker td,
+    .rdtPicker th {
+      text-align: center;
+      height: 39px;
+      font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+    }
+    .rdtPicker th.rdtNext,
+    .rdtPicker th.rdtPrev {
+      font-size: clamp(21px, 6.45vw + 0.12rem, 30px);
+      vertical-align: top;
+    }
+  }

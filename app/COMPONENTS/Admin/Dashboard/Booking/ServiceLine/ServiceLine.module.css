@@ -1,0 +1,160 @@
+
+.service {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-family: var(--text-font);
+    box-sizing: border-box;
+    padding: 5px 10px;
+    transition: all 0.2s ease-out;
+    /* animation: moveInFromLeft 0.5s ease-out forwards; */
+  }
+
+  .service.active {
+   background-color: var(--dark-yellow);
+  }
+
+
+  @keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      background-color: var(--dark-yellow);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  
+  
+  .service:hover {
+
+    cursor: pointer;
+  }
+  
+  .service:hover .plusIcon {
+    opacity: 1;
+    color: var(--light-grey);
+  }
+  
+  .plusIcon {
+    margin-right: 5px;
+    opacity: 0;
+  }
+
+  .plusIcon.active{
+    opacity: 1;
+    color: white;
+  }
+
+  .service:hover  .plusIcon.active{
+    color: white
+  }
+  
+  .serviceName {
+    color: var(--white-pure);
+    margin: 0;
+  }
+  
+  .serviceDuration {
+    color: var(--light-grey);
+    margin: 0;
+  }
+  .addedNotification{
+
+    display: none;
+  }
+
+ 
+
+
+  @media (max-width:600px){
+    .service {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+      
+        padding: clamp(10px, 2.86vw + 0.12rem, 15px);
+      }
+
+      .service.active {
+        animation: bounce 0.5s ease-in-out;
+      }
+
+      .addedNotification{
+        color: var(--white-pure);
+        font-family: var(--header-font);
+        font-weight: bold;
+     
+        margin: 0;
+        position: absolute;
+    z-index: 5;
+    right: 10px;
+background-color: var(--dark-grey);
+    border-radius: 50%;
+   padding: 5px;
+   box-sizing: border-box;
+ 
+      }
+
+      .addedNotification.active{
+        display: flex;
+      }
+    
+    
+      @keyframes bounce {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          background-color: var(--dark-yellow);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    
+      @keyframes moveInFromTop {
+        0% {
+          transform: translateY(-100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+      }
+
+      
+      .service:hover{
+        background-color: unset;
+      }
+
+      .service:hover .plusIcon {
+        opacity: unset;
+        color: unset;
+      }
+      .plusIcon {
+        opacity: 1;
+        width: clamp(16px, 4.72vw + 0.12rem, 20px);
+        height: clamp(16px, 4.72vw + 0.12rem, 20px);
+      }
+    
+      .serviceName {
+        font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+      }
+    
+      .serviceDuration {
+        font-size: clamp(16px, 4.72vw + 0.12rem, 20px);
+      }
+  }
