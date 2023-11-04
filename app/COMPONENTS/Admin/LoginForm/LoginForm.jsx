@@ -55,6 +55,9 @@ export default function LoginForm({logUserIn}) {
       className={styles.loginForm}
     >
       <h1 className={styles.loginTitle}>BENTORNATO</h1>
+      <p className={styles.loginIntro}>
+          Inserisci le tue credenziali per accedere.
+        </p>
      
       <div className={styles.loginInputBox}>
         <input

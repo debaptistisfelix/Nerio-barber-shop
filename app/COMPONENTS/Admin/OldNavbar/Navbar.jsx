@@ -10,6 +10,7 @@ import { faScissors } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import TimeDisplayer from './TimeDisplayer';
 import { signOut } from 'next-auth/react';
+import notify from '@/lib/toastNotify';
 
 
 
@@ -70,7 +71,10 @@ const handleLinkClick = (nr) => {
                     BARBIERI
                 </li>
                 <button
-           onClick={()=>signOut()}
+           onClick={()=>{
+                signOut()
+                notify('Logout effettuato con successo', 'success')
+           }}
                 className={styles.logOutBtn}>LOG OUT</button>
             </ul>
         </nav>

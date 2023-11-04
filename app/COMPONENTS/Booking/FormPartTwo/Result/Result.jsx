@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import PointLoader from "@/app/COMPONENTS/Loader/PointLoader/PointLoader";
 
 export default function Result({availableSlots, isSlotLoading, date, time, handleTimeChange}) {
-    const  conditionForClosedShop = availableSlots !== null && availableSlots === "Il Negozio è chiuso" && isSlotLoading === false;
+    const conditionForClosedShop = availableSlots !== null && availableSlots === "Il Negozio è chiuso" && isSlotLoading === false;
     const conditionForTimeSLots = availableSlots !== null && Array.isArray(availableSlots) && isSlotLoading === false;
     const conditionForLoading = isSlotLoading === true && availableSlots === null;
     const conditionForNoAvailableSlots = availableSlots !== null && availableSlots.length === 0 && isSlotLoading === false;   

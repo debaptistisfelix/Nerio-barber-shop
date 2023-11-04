@@ -15,6 +15,7 @@ import FullScreenLoader from "../../FullScreenLoader/FullScreenLoader";
 import { useAdminBookingContext } from "@/app/COMPONENTS/Context/AdminBookingContext";
 import notify from "@/lib/toastNotify";
 import ConvertToDateUTC from "@/lib/TimeDateConverters/ConvertToDateUTC";
+import BookingList from "./BookingList/BookingList";
 
 
 
@@ -119,29 +120,7 @@ export default function Agenda() {
           />
         </div>
         <div className={styles.bookingsContainer}>
-{isLoading === true && bookings.length === 0 && <div className={styles.loaderContainer}><PointLoader
-          pointWidth={"15px"} pointHeight={"15px"} pointColor={"#191919"}
-          loaderHeight={"50px"} loaderWidth={"100px"} loaderMargin={"50px 0"}/></div>}
-          {bookings.length === 0 && isLoading === false && (
-            <div className={styles.noResults}>
-              <h3 className={styles.noResultTitle}>
-                Nessun appuntamento per questa giornata.
-              </h3>
-            </div>
-          )}
-          {bookings.length !== 0 && isLoading === false && (
-            <div className={styles.bookingList}>
-              {bookings.map((booking) => {
-                return (
-                  <BookingBlock
-                    removeBooking={removeBooking}
-                    booking={booking}
-                    key={uuidv4()}
-                  />
-                );
-              })}
-            </div>
-          )}
+<BookingList bookings={bookings} removeBooking={removeBooking} isLoading={isLoading}/>
         </div>
       </main>
     </section>

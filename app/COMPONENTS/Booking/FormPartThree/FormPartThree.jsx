@@ -7,23 +7,22 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelopeCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import notify from "@/lib/toastNotify";
 import { useBookingContext } from "../../Context/BookingContext";
-import moment from "moment";
+
 import PointLoader from "../../Loader/PointLoader/PointLoader";
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+
 import AlreadyBooked from "./AlreadyBooked/AlreadyBooked";
 import Link from "next/link";
 import ConvertDBTimeToOnlyTime from "@/lib/TimeDateConverters/ConvertDBTimeToOnlyTime";
-
+import BookingConfirmation from "./BookingConfirmation/BookingConfirmation";
+import Recap from "./Recap/Recap";
 
 export default function FormPartThree({ bookingSectionRef }) {
   const {
   confirmationStatus, setConfirmationStatus,
-    error,
     backToStart ,
     booking,
     bookingTotals,
-    returnToFirstForm,
     returnToSecondForm
   } = useBookingContext();
 
@@ -36,7 +35,11 @@ export default function FormPartThree({ bookingSectionRef }) {
   };
 
 
-
+  const resetBookingConfirmationState = () => {
+    setIsBookingConfirmed(false);
+    setAcceptedTerms(false);
+    setTimeSlotNoMoreAvailable(false);
+  }
 
 
 
@@ -98,28 +101,8 @@ export default function FormPartThree({ bookingSectionRef }) {
 
       {confirmationStatus.isError && confirmationStatus.errorStatusCode !== null  && <AlreadyBooked statusCode={confirmationStatus?.errorStatusCode} returnToSecondForm={returnToSecondForm} backToStart={backToStart} />}
 
-      {confirmationStatus.isLoading === false && isBookingConfirmed === true && 
-        <main className={styles.confirmationContainer}>
-          <FontAwesomeIcon
-            icon={faEnvelopeCircleCheck}
-            className={styles.iconEmail}
-          />
-          <h1 className={styles.confirmationTitle}>PRENOTAZIONE CONFERMATA</h1>
-          <p className={styles.confirmationIntro}>
-            Ti abbiamo inviato un' email come prememoria. In caso di problemi
-            puoi disdire la prenotazione tramite la mail di conferma o
-            chiamandoci in Negozio.
-          </p>
-          <button
-            onClick={() => {
-              backToStart();
-              setIsBookingConfirmed(false);
-            }}
-            className={styles.backToBeginningBtn}
-          >
-            Torna al menù delle Prenotazioni
-          </button>
-        </main>}
+      {confirmationStatus.isLoading === false && isBookingConfirmed === true && <BookingConfirmation backToStart={backToStart} resetBookingConfirmationState={resetBookingConfirmationState} />
+        }
         {confirmationStatus.isLoading === false && isBookingConfirmed === false && 
         <>
         <p className={styles.intro}>
@@ -140,46 +123,8 @@ export default function FormPartThree({ bookingSectionRef }) {
             />
             INDIETRO
           </div>
-          <div className={styles.bookingInfo}>
-            <h2 className={styles.bookingInfoTitle}>IL TUO APPUNTAMENTO</h2>
-
-            <div className={styles.bookingBox}>
-              <h4 className={styles.label}>Servizi:</h4>
-              <ul className={styles.labelContent}>
-                {servicesToShowToCustomer.map((service) => {
-                  return (
-                    <li key={uuidv4()} className={styles.service}>
-                      {service}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            <div className={styles.bookingBox}>
-              <h4 className={styles.label}>Data</h4>
-              <h4 className={styles.labelContent}>
-                {timePart} - {moment(booking?.date).format("YYYY-MM-DD")}
-              </h4>
-            </div>
-
-            <div className={styles.bookingBox}>
-              <h4 className={styles.label}>Barbiere:</h4>
-              <h4 className={styles.labelContent}>{booking?.barber.name}</h4>
-            </div>
-            <div className={styles.bookingBox}>
-              <h4 className={styles.label}>Prezzo</h4>
-              <h4 className={styles.labelContent}>€{bookingTotals.totalPrice}</h4>
-            </div>
-
-            <div className={styles.bookingBox}>
-              <h4 className={styles.label}>Nome:</h4>
-              <h4 className={styles.labelContent}>{booking?.name}</h4>
-            </div>
-            <div className={styles.bookingBox}>
-              <h4 className={styles.label}>Email:</h4>
-              <h4 className={styles.labelContent}>{booking?.email}</h4>
-            </div>
-          </div>
+          
+          <Recap booking={booking} bookingTotals={bookingTotals} timePart={timePart} servicesToShowToCustomer={servicesToShowToCustomer} />
 
           <div className={styles.customerInfo}>
             <h2 className={styles.bookingInfoTitle}>ULTIMO STEP</h2>

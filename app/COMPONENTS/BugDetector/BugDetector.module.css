@@ -62,6 +62,9 @@
      display: flex;
      flex-direction: column;
      align-items: center;
+     justify-content:flex-start;
+     padding:10px 0px;
+     gap: 20px;
      transform: scale(0);
  }
  
@@ -179,6 +182,13 @@
      font-size: 14px;
      border: 1px solid #ff6000;
  }
+
+ .btnBox{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+ }
  
  .btn{
      width: 100%;
@@ -197,6 +207,10 @@
      font-weight: 600;
      letter-spacing: 2px;
  
+ }
+
+ .mobileCloseBtn{
+    display: none;
  }
  
  .noShow{
@@ -220,6 +234,8 @@
  width: 100%;}
  
  @media (max-width:600px){
+
+    
      .bugDetectorContainer{
       
         /*  width: clamp(50px, 17.15vw + 0.12rem, 75px);
@@ -269,6 +285,10 @@
       .shader{
          z-index: 100;
       }
+
+      .noMobileShow{
+        display: none;
+    }
  
      .bugDetectorForm{
          position: fixed;
@@ -276,14 +296,16 @@
          right: unset;
          left: unset;
          background-color:  #ff6000;
+   
          background-color: var(--white-pure);
          width: 100vw;
-         height: 85vh;
+         height: 100vh;
          z-index: 100;
          border-radius: 8px;
          box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
          display: flex;
          flex-direction: column;
+         justify-content: center;
          align-items: center;
      }
  
@@ -308,7 +330,22 @@
      }
      .btn{
          font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+         width: 45%;
      }
+
+     .mobileCloseBtn{
+        display: block;
+        width: 45%;
+     }
+
+     .loaderContainer{
+        height:100%;
+        position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff6000;
+    width: 100%;}
  
     
  }
@@ -330,6 +367,13 @@
          display: flex;
          flex-direction: column;
          align-items: center;
+     }
+
+     .loaderContainer{
+        background-color: #ff6000;
+        height: 100%;
+        top: 0;
+        border-radius: 8px;
      }
  }
  

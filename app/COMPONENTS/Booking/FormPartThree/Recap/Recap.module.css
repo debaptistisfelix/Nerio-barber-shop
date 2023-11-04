@@ -1,0 +1,101 @@
+
+.bookingInfo {
+    width: min(50%, 400px);
+    height: 100%;
+    /*  border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  .bookingInfoTitle {
+    font-family: var(--heading-font);
+    color: var(--dark-grey);
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+  
+  .bookingBox {
+    display: flex;
+    align-items: baseline;
+    color: var(--light-grey);
+    font-family: var(--text-font);
+    margin-bottom: 20px;
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .label {
+    font-weight: 400;
+    margin: 0;
+    width: 30%;
+  }
+  
+  .labelContent {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    width: 70%;
+  
+    align-items: flex-end;
+  
+    font-weight: bold;
+  }
+
+  
+  @media (max-width: 600px) {
+
+  
+    .bookingInfo {
+      width: 95%;
+      height: fit-content;
+  
+      display: flex;
+      flex-direction: column;
+      margin-right: 0;
+    }
+  
+    .bookingInfoTitle {
+      font-family: var(--heading-font);
+      color: var(--dark-grey);
+      font-size: clamp(20px, 6.45vw + 0.12rem, 25px);
+      font-size: 20px;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 40px;
+    }
+  
+    .bookingBox {
+      display: flex;
+      align-items: baseline;
+      color: var(--light-grey);
+      font-family: var(--text-font);
+      margin-bottom: 20px;
+      width: 100%;
+      height: fit-content;
+    }
+  
+    .label {
+      font-weight: 400;
+      margin: 0;
+      width: 30%;
+      font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+    }
+  
+    .labelContent {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      width: 70%;
+      text-align: end;
+      align-items: flex-end;
+      font-size: clamp(16px, 4.72vw + 0.12rem, 18px);
+      font-weight: bold;
+    }
+  
+   
+  }

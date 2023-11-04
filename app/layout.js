@@ -5,6 +5,7 @@ import ToastContext from './COMPONENTS/Context/ToastContext'
 import TouchContextProvider from './COMPONENTS/Context/TouchContext'
 import { Oswald } from 'next/font/google'
 
+
 const oswald = Oswald({ subsets: ['latin'] });
 
 
