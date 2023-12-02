@@ -14,9 +14,9 @@ export async function POST(req){
         const body = await req.json();
         const {barberId, date, duration} = body;
         const slotDuration = parseInt(duration, 10);
-        const dateObj = new Date(date);
+        const dateObj = moment.utc(date).toDate();
 
-        const today = new Date();
+        const today = moment.utc().toDate();
 
         console.log("today", today)
         console.log("dateObj", dateObj)
@@ -24,7 +24,7 @@ export async function POST(req){
         console.log(today.toDateString())
 
         // Calculate the current time of the day in UTC
-        const currentTimeUTC = Date.parse(today) - today.getTimezoneOffset() * 60000;
+        const currentTimeUTC = moment.utc(today).valueOf();
 
         console.log("currentTimeUTC", currentTimeUTC)
 
@@ -43,17 +43,10 @@ export async function POST(req){
 
         console.log(body)
 
-        const openingTime1 = new Date(dateObj);
-        openingTime1.setUTCHours(8, 30, 0, 0);
-
-        const closingTime1 = new Date(dateObj);
-        closingTime1.setUTCHours(12, 30, 0, 0);
-
-        const openingTime2 = new Date(dateObj);
-        openingTime2.setUTCHours(15, 0, 0, 0);
-
-        const closingTime2 = new Date(dateObj);
-        closingTime2.setUTCHours(19, 0, 0, 0);
+        const openingTime1 = moment.utc(dateObj).set({hour: 8, minute: 30, second: 0, millisecond: 0}).toDate();
+        const closingTime1 = moment.utc(dateObj).set({hour: 12, minute: 30, second: 0, millisecond: 0}).toDate();
+        const openingTime2 = moment.utc(dateObj).set({hour: 15, minute: 0, second: 0, millisecond: 0}).toDate();
+        const closingTime2 = moment.utc(dateObj).set({hour: 19, minute: 0, second: 0, millisecond: 0}).toDate();
 
 
         console.log(openingTime1)
@@ -200,7 +193,8 @@ export async function POST(req){
                 
 
                 return !bookedAppointments.some((appointment) => {
-                    const appointmentTimeUTC = Date.parse(appointment.time) 
+                    const appointmentTimeUTC = moment.utc(appointment.time).valueOf();
+
 
 
 
