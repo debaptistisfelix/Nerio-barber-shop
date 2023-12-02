@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 import notify from "@/lib/toastNotify";
 import { useAdminBookingContext } from "@/app/COMPONENTS/Context/AdminBookingContext";
 import ConvertToDateUTC from "@/lib/TimeDateConverters/ConvertToDateUTC";
-import ConvertDBTimeToItalianTime from "@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne";
+import ConvertUTCToItalianTime from "@/lib/TimeDateConverters/ConvertUTCtoItalianTime";
 
 export default function Recap() {
   const {
@@ -72,7 +72,7 @@ export default function Recap() {
   
 
   // Format the time as "HH:mm"
-  const timePart = ConvertDBTimeToItalianTime(time);
+  const timePart = ConvertUTCToItalianTime(time);
 
   useEffect(() => {
     if(booking.name!== "" && booking.email !== "" && booking.services.length !== 0 && booking.barber !== null && booking.date !== null && booking.time !== null){

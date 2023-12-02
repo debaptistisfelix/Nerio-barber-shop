@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import ConvertDBTimeToItalianTime from "@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne";
+import ConvertUTCToItalianTime from "@/lib/TimeDateConverters/ConvertUTCtoItalianTime";
 
 export default function BookingBlock({ booking }) {
   
@@ -12,7 +13,7 @@ export default function BookingBlock({ booking }) {
 
 
   const { time, name, email, services } = booking;
-  const bookingTimeStart = ConvertDBTimeToItalianTime(time);
+  const bookingTimeStart = ConvertUTCToItalianTime(time);
 
   const totalDuration = booking.services.reduce((acc, service) => {
     return acc + service.duration;
@@ -25,7 +26,7 @@ export default function BookingBlock({ booking }) {
   const bookingEndTimeUTC = 
   Date.parse(booking.time) + totalDuration * 60000
 
-  const bookingEndTime = ConvertDBTimeToItalianTime(bookingEndTimeUTC);
+  const bookingEndTime = ConvertUTCToItalianTime(bookingEndTimeUTC);
 
 
 

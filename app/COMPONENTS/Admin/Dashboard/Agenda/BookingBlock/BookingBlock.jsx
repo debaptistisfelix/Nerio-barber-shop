@@ -7,6 +7,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid";
 import ConvertDBTimeToItalianTime from "@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne";
+import ConvertUTCToItalianTime from "@/lib/TimeDateConverters/ConvertUTCtoItalianTime";
 
 
 export default function BookingBlock({ booking, removeBooking }) {
@@ -14,7 +15,7 @@ export default function BookingBlock({ booking, removeBooking }) {
   const blockRef = useRef(null);
 
 
-  const bookingTime = ConvertDBTimeToItalianTime(booking.time);
+  const bookingTime = ConvertUTCToItalianTime(booking.time);
 
   const totalDuration = booking.services.reduce((acc, curr) => {
     return acc + curr.duration;
@@ -23,7 +24,7 @@ export default function BookingBlock({ booking, removeBooking }) {
 
   const bookingEndTimeUtc = 
     Date.parse(booking.time) + totalDuration * 60000
-  const bookingEndTime = ConvertDBTimeToItalianTime(bookingEndTimeUtc);  
+  const bookingEndTime = ConvertUTCToItalianTime(bookingEndTimeUtc);  
 
 
   return (

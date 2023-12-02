@@ -13,10 +13,9 @@ import { useState } from "react";
 
 import AlreadyBooked from "./AlreadyBooked/AlreadyBooked";
 import Link from "next/link";
-import ConvertDBTimeToOnlyTime from "@/lib/TimeDateConverters/ConvertDBTimeToOnlyTime";
 import BookingConfirmation from "./BookingConfirmation/BookingConfirmation";
 import Recap from "./Recap/Recap";
-import ConvertDBTimeToItalianTime from "@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne";
+import ConvertUTCToItalianTime from "@/lib/TimeDateConverters/ConvertUTCtoItalianTime";
 
 export default function FormPartThree({ bookingSectionRef }) {
   const {
@@ -45,7 +44,7 @@ export default function FormPartThree({ bookingSectionRef }) {
 
 
   // Format the time as "HH:mm"
-  const timePart = ConvertDBTimeToItalianTime(booking?.time)
+  const timePart = ConvertUTCToItalianTime(booking?.time)
 
   const servicesToShowToCustomer = booking?.services.map((service) => {
     return service.name;
