@@ -1,12 +1,10 @@
 "use client"
 
 import styles from "./BookingBlock.module.css";
-import moment from "moment";
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
-
+import ConvertDBTimeToItalianTime from "@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne";
 
 export default function BookingBlock({ booking }) {
   
@@ -14,7 +12,7 @@ export default function BookingBlock({ booking }) {
 
 
   const { time, name, email, services } = booking;
-  const bookingTimeStart =booking.time.slice(11, 16);
+  const bookingTimeStart = ConvertDBTimeToItalianTime(time);
 
   const totalDuration = booking.services.reduce((acc, service) => {
     return acc + service.duration;
@@ -24,23 +22,12 @@ export default function BookingBlock({ booking }) {
     return acc + service.price;
   }, 0);
 
-  const bookingEndTime = 
+  const bookingEndTimeUTC = 
   Date.parse(booking.time) + totalDuration * 60000
 
-const bookingEndTimeUTCHours = new Date(bookingEndTime).getUTCHours()
-const bookingEndTimeUTCMinutes = new Date(bookingEndTime).getUTCMinutes()
+  const bookingEndTime = ConvertDBTimeToItalianTime(bookingEndTimeUTC);
 
-const getRightTime = (hours, minutes) => {
-  if (hours < 10 && minutes < 10) {
-    return `0${hours}:0${minutes}`
-  } else if (hours < 10 && minutes >= 10) {
-    return `0${hours}:${minutes}`
-  } else if (hours >= 10 && minutes < 10) {
-    return `${hours}:0${minutes}`
-  } else {
-    return `${hours}:${minutes}`
-  }
-};
+
 
   return (
     <section className={styles.block}>
@@ -49,7 +36,7 @@ const getRightTime = (hours, minutes) => {
       >
         <div className={styles.sideA}>
           <h3 className={styles.time}>
-            {bookingTimeStart} - {getRightTime(bookingEndTimeUTCHours, bookingEndTimeUTCMinutes)}
+            {bookingTimeStart} - {bookingEndTime}
           </h3>
           <h3 className={styles.name}>{name}</h3>
         </div>

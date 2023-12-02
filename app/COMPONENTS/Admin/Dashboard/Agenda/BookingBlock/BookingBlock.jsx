@@ -6,6 +6,7 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid";
+import ConvertDBTimeToItalianTime from "@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne";
 
 
 export default function BookingBlock({ booking, removeBooking }) {
@@ -13,34 +14,16 @@ export default function BookingBlock({ booking, removeBooking }) {
   const blockRef = useRef(null);
 
 
-  const bookingTime =booking.time.slice(11, 16);
+  const bookingTime = ConvertDBTimeToItalianTime(booking.time);
 
   const totalDuration = booking.services.reduce((acc, curr) => {
     return acc + curr.duration;
   }, 0);
 
 
-  const bookingEndTime = 
+  const bookingEndTimeUtc = 
     Date.parse(booking.time) + totalDuration * 60000
-
-  const bookingEndTimeUTCHours = new Date(bookingEndTime).getUTCHours()
-  const bookingEndTimeUTCMinutes = new Date(bookingEndTime).getUTCMinutes()
-
-  const getRightTime = (hours, minutes) => {
-    if (hours < 10 && minutes < 10) {
-      return `0${hours}:0${minutes}`
-    } else if (hours < 10 && minutes >= 10) {
-      return `0${hours}:${minutes}`
-    } else if (hours >= 10 && minutes < 10) {
-      return `${hours}:0${minutes}`
-    } else {
-      return `${hours}:${minutes}`
-    }
-  }
- 
-
-
-
+  const bookingEndTime = ConvertDBTimeToItalianTime(bookingEndTimeUtc);  
 
 
   return (
@@ -61,7 +44,7 @@ export default function BookingBlock({ booking, removeBooking }) {
       >
         <div className={styles.sideA}>
           <h3 className={styles.time}>
-            {bookingTime} - {getRightTime(bookingEndTimeUTCHours, bookingEndTimeUTCMinutes)}
+            {bookingTime} - {bookingEndTime}
           </h3>
           <h3 className={styles.barber}>({booking.barber.name})</h3>
         </div>

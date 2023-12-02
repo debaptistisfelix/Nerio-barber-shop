@@ -2,12 +2,13 @@
 import styles from "./TimeSlot.module.css";
 import { useBookingContext } from "@/app/COMPONENTS/Context/BookingContext";
 import ConvertDBTimeToOnlyTime from "@/lib/TimeDateConverters/ConvertDBTimeToOnlyTime";
+import ConvertDBTimeToItalianTime from "@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne";
 
 export default function TimeSlot({ slot, handleTimeChange, time, date }) {
   const { setTemporaryBarber } = useBookingContext();   
 
   // Format the time as "HH:mm"
-  const timePart = ConvertDBTimeToOnlyTime(slot?.slot)
+  const timePart = ConvertDBTimeToItalianTime(slot?.slot)
 
   return (
     <h4

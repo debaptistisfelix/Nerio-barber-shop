@@ -3,6 +3,7 @@ import {PrismaClient} from '@prisma/client';
 import sendBookingConfirmationEmail from '@/lib/EmailSending/SendBookingConfirmation';
 import dayjs from "dayjs";
 import ConvertDBTimeToOnlyTime from '@/lib/TimeDateConverters/ConvertDBTimeToOnlyTime';
+import ConvertDBTimeToItalianTime from '@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne';
 
 const prisma = new PrismaClient();
 
@@ -88,7 +89,7 @@ export async function POST(req){
         
       
         // Format the time as "HH:mm"
-        const timePart = ConvertDBTimeToOnlyTime(newAppointment?.time);
+        const timePart = ConvertDBTimeToItalianTime(newAppointment?.time);
 
 
         const localDate = dayjs(date).format("DD/MM/YYYY");

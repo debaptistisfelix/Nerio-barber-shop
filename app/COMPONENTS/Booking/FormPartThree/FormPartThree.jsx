@@ -16,6 +16,7 @@ import Link from "next/link";
 import ConvertDBTimeToOnlyTime from "@/lib/TimeDateConverters/ConvertDBTimeToOnlyTime";
 import BookingConfirmation from "./BookingConfirmation/BookingConfirmation";
 import Recap from "./Recap/Recap";
+import ConvertDBTimeToItalianTime from "@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne";
 
 export default function FormPartThree({ bookingSectionRef }) {
   const {
@@ -44,7 +45,7 @@ export default function FormPartThree({ bookingSectionRef }) {
 
 
   // Format the time as "HH:mm"
-  const timePart = ConvertDBTimeToOnlyTime(booking?.time)
+  const timePart = ConvertDBTimeToItalianTime(booking?.time)
 
   const servicesToShowToCustomer = booking?.services.map((service) => {
     return service.name;

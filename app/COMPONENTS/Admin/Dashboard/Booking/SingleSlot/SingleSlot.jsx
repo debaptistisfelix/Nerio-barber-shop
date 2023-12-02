@@ -4,7 +4,7 @@ import styles from "./SingleSlot.module.css";
 import { useState, useEffect, useRef, useContext } from "react";
 import { useAdminBookingContext } from "@/app/COMPONENTS/Context/AdminBookingContext";
 import ConvertDBTimeToOnlyTime from "@/lib/TimeDateConverters/ConvertDBTimeToOnlyTime";
-
+import ConvertDBTimeToItalianTime from "@/lib/TimeDateConverters/ConvertTimeToItalianTimeZOne";
 
 export default function SingleSlot({ slot, chooseTimeSlot }) {
   const { addBookingBarber, date, time } = useAdminBookingContext()
@@ -12,7 +12,7 @@ export default function SingleSlot({ slot, chooseTimeSlot }) {
 
 
   // Format the time as "HH:mm"
-  const timePart = ConvertDBTimeToOnlyTime(slot?.slot)
+  const timePart = ConvertDBTimeToItalianTime(slot?.slot)
  
 
 
