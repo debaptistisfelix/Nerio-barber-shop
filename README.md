@@ -11,7 +11,9 @@ This project is a website for a barber-shop. The users can find all the infos th
 - JavaScript
 - React
 - Next.js
+- Next-auth
 - Prisma
 - MongoDB
+- Sendgrid
 
 
