@@ -103,7 +103,7 @@ export async function POST(req){
         if(process.env.NODE_ENV === "development"){
             cancelURL = `http://localhost:3000/cancelBooking/${newBookingId}`;
         } else {
-            cancelURL = `https://${process.env.VERCEL_URL}/cancelBooking/${newBookingId}`;
+            cancelURL = `https://nerio-barber-shop.vercel.app/cancelBooking/${newBookingId}`;
         }
 
     if(email){
